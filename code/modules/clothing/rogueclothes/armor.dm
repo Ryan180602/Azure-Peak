@@ -574,13 +574,14 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	smelt_bar_num = 2
 
-/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/fluted
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ornate
 	slot_flags = ITEM_SLOT_ARMOR
 	armor_class = ARMOR_CLASS_HEAVY
-	name = "fluted hauberk"
-	desc = "An ornate steel cuirass with tassets, worn atop thick chainmaille. While it falters against arrows and bolts, these interlinked layers are superb at warding off the blows of inhumen claws and axes."
-	icon_state = "flutedhauberk"
-	item_state = "flutedhauberk"
+	name = "psydonite hauberk"
+	desc = "An ornate steel cuirass with tassets, worn atop thick chainmaille. While it falters against arrows and bolts, \
+			these interlinked layers are superb at warding off the blows of inhumen claws and axes."
+	icon_state = "ornatehauberk"
+	item_state = "ornatehauberk"
 	max_integrity = 350
 
 
@@ -628,8 +629,18 @@
 /obj/item/clothing/suit/roguetown/armor/plate/half/fluted
 	name = "fluted cuirass"
 	icon_state = "flutedcuirass"
-	desc = "An ornate steel cuirass with tassets, favored by both the Holy Otavan Inquisition and the Order of the Silver Psycross. Arrows may yet splinter against the steel, but a bolt will still punch straight through it."
-	body_parts_covered = CHEST|VITALS|LEGS
+	desc = "A sturdily made steel cuirass with tassets. Made to sustain, supposedly; though maybe not crossbow bolts."
+
+	body_parts_covered = CHEST | VITALS | LEGS
+	max_integrity = 350
+
+/obj/item/clothing/suit/roguetown/armor/plate/half/fluted/ornate
+	name = "psydonite cuirass"
+	icon_state = "ornatecuirass"
+	desc = "An ornate steel cuirass with tassets, favored by both the Holy Otavan Inquisition and the Order of the Silver Psycross. \
+			Made to endure."
+	
+	max_integrity = 300
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	name = "iron breastplate"
@@ -684,6 +695,45 @@
 	. = ..()
 	AddComponent(/datum/component/item_equipped_movement_rustle, SFX_PLATE_STEP)
 
+/obj/item/clothing/suit/roguetown/armor/plate/fluted
+	name = "fluted half-plate"
+	desc = "A sturdily made fluted half-plate armour-set, complete with pauldrons and shoulder-guards. \
+	Supposedly made to deflect blows."
+	icon_state = "flutedhalfplate"
+
+	equip_delay_self = 6 SECONDS
+	unequip_delay_self = 6 SECONDS
+
+	max_integrity = 600
+	body_parts_covered = CHEST | VITALS | ARMS
+
+/obj/item/clothing/suit/roguetown/armor/plate/fluted/ornate
+	name = "psydonite half-plate"
+	desc = "A sturdily made fluted half-plate armour-set, complete with pauldrons and shoulder-guards. \
+			Favored by both the Holy Otavan Inquisition and the Order of the Silver Psycross. It smells of the madness of an enduring God."
+	icon_state = "ornatehalfplate"
+
+	max_integrity = 400
+
+	/// Whether the user has the Heavy Armour Trait prior to donning.
+	var/traited = FALSE
+
+/obj/item/clothing/suit/roguetown/armor/plate/fluted/ornate/equipped(mob/living/user, slot)
+	..()
+	if(slot != SLOT_ARMOR)
+		return
+	if (!HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
+		return
+	ADD_TRAIT(user, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	to_chat(user, span_notice("Endure til' inevitability."))
+
+/obj/item/clothing/suit/roguetown/armor/plate/fluted/ornate/dropped(mob/living/user)
+	..()
+	if (traited)
+		return
+	REMOVE_TRAIT(user, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	to_chat(user, span_notice("Trust in thyself."))
+
 /obj/item/clothing/suit/roguetown/armor/plate/full
 	name = "plate armor"
 	desc = "Full plate. Slow to don and doff without the aid of a good squire."
@@ -695,6 +745,48 @@
 	strip_delay = 6 SECONDS
 	smelt_bar_num = 4
 
+/obj/item/clothing/suit/roguetown/armor/plate/full/fluted
+	name = "fluted plate"
+	desc = "A sturdily made fluted full-plate. Supposedly made to deflect blows from blades and arrows."
+	icon_state = "flutedplate"
+
+	equip_delay_self = 14 SECONDS
+	unequip_delay_self = 14 SECONDS
+
+	max_integrity = 600
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/fluted/ornate
+	name = "psydonite plate"
+	desc = "A sturdily made fluted full-plate. Heavy-duty, and made to deflect blows from blades and arrows. \
+			Favored by both the Holy Otavan Inquisition and the Order of the Silver Psycross. It smells of the madness of an enduring God."
+	icon_state = "ornateplate"
+
+	max_integrity = 500
+
+	/// Whether the user has the Heavy Armour Trait prior to donning.
+	var/traited = FALSE
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/fluted/ornate/equipped(mob/living/user, slot)
+	..()
+	if(slot != SLOT_ARMOR)
+		return
+	user.change_stat("endurance", 1)
+	user.change_stat("constitution", 1)
+	to_chat(user, span_notice("Endure til' inevitability."))
+	if (!HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
+		return
+	if (HAS_TRAIT(user, TRAIT_HEAVYARMOR))
+		traited = TRUE
+		return
+	ADD_TRAIT(user, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/fluted/ornate/dropped(mob/living/user)
+	..()
+	user.change_stat("endurance", -1)
+	user.change_stat("constitution", -1)
+	to_chat(user, span_notice("Trust in thyself."))
+	if (!traited)
+		REMOVE_TRAIT(user, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/matthios
 	name = "gilded fullplate"
