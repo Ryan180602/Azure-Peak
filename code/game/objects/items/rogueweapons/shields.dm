@@ -14,7 +14,7 @@
 	throw_speed = 1
 	throw_range = 3
 	w_class = WEIGHT_CLASS_BULKY
-	possible_item_intents = list(SHIELD_BASH, SHIELD_BLOCK)
+	possible_item_intents = list(SHIELD_BASH)
 	block_chance = 0
 	sharpness = IS_BLUNT
 	wlength = WLENGTH_SHORT
@@ -48,14 +48,10 @@
 /obj/item/rogueweapon/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the projectile", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
 	if(attack_type == THROWN_PROJECTILE_ATTACK || attack_type == PROJECTILE_ATTACK)
-		if(owner.client?.chargedprog == 100 && owner.used_intent?.tranged)
+		if(prob(coverage))
 			owner.visible_message(span_danger("[owner] blocks [hitby] with [src]!"))
-			return 1
-		else
-			if(prob(coverage))
-				owner.visible_message(span_danger("[owner] blocks [hitby] with [src]!"))
-				return 1
-	return 0
+			return TRUE
+	return FALSE
 
 /datum/intent/shield/bash
 	name = "bash"

@@ -42,7 +42,8 @@
 	. = ..()
 
 	var/mob/living/L = firer
-	if(!L || !L.mind) return
+	if(!L || !L.mind) 
+		return
 
 	var/skill_multiplier = 0
 
@@ -64,39 +65,56 @@
 	projectile_type = /obj/projectile/bullet/reusable/arrow
 	caliber = "arrow"
 	icon = 'icons/roguetown/weapons/ammo.dmi'
-	icon_state = "arrow"
+	icon_state = "stonearrow"
 	force = 10
 	dropshrink = 0.6
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
-	max_integrity = 20
+	max_integrity = 10
+
+/obj/item/ammo_casing/caseless/rogue/arrow/stone
+	name = "stone arrow"
+	desc = "A simple dowel sports lashed flint knapped and honed to a razor edge. Folk \
+	wisdom holds that these cut finer than iron heads, but they tend to shatter \
+	on impact with armor."
+	max_integrity = 5
+	projectile_type = /obj/projectile/bullet/reusable/arrow/stone
 
 /obj/item/ammo_casing/caseless/rogue/arrow/iron
-	name = "iron arrow"
+	name = "iron broadhead arrow"
+	icon_state = "ironarrow"
 	desc = "Bundles of steam straightened dowels are notched at one end and fastened \
-	to razor heads on another. With flight feathers lashed it will fly true to its \
+	to iron-heads on another. With flight feathers lashed it will fly true to its \
 	shooters will."
 	projectile_type = /obj/projectile/bullet/reusable/arrow/iron
 
+/obj/item/ammo_casing/caseless/rogue/arrow/steel
+	name = "steel bodkin arrow"
+	icon_state = "steelarrow"
+	desc = "Bundles of steam straightened dowels are notched at one end and fastened \
+	to steel-heads on another. Crafted for more well-prepared targets."
+	projectile_type = /obj/projectile/bullet/reusable/arrow/steel
+
 /obj/projectile/bullet/reusable/arrow
 	name = "arrow"
-	damage = 50
+	damage = 20
 	damage_type = BRUTE
-	armor_penetration = 40
+	armor_penetration = 10
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "arrow_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow
 	range = 15
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
-	embedchance = 100
+	embedchance = 25
 	woundclass = BCLASS_STAB
 	flag = "piercing"
 	speed = 0.4
 
 /obj/projectile/bullet/reusable/arrow/on_hit(atom/target)
-	. = ..()
+	..()
 
 	var/mob/living/L = firer
-	if(!L || !L.mind) return
+	if(!L || !L.mind) 
+		return
 
 	var/skill_multiplier = 0
 
@@ -108,40 +126,51 @@
 	if(skill_multiplier && can_train_combat_skill(L, /datum/skill/combat/bows, SKILL_LEVEL_EXPERT))
 		L.mind.add_sleep_experience(/datum/skill/combat/bows, L.STAINT * skill_multiplier)
 
-/obj/projectile/bullet/reusable/arrow/iron
-	name = "iron arrow"
-	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/iron
-
 /obj/projectile/bullet/reusable/arrow/stone
 	name = "stone arrow"
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/stone
+	accuracy = 60
 
-/obj/item/ammo_casing/caseless/rogue/arrow/stone
-	name = "stone arrow"
-	desc = "A simple dowel sports lashed flint knapped and honed to a razor edge. Folk \
-	wisdom holds that these cut finer than iron heads, but they tend to shatter \
-	on impact with armor."
-	icon_state = "stonearrow"
-	max_integrity = 5
-	projectile_type = /obj/projectile/bullet/reusable/arrow/stone
+/obj/projectile/bullet/reusable/arrow/iron
+	name = "broadhead arrow"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/iron
+
+	damage = 40
+	armor_penetration = 20
+	embedchance = 30
+
+/obj/projectile/bullet/reusable/arrow/steel
+	name = "bodkin arrow"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/steel
+
+	accuracy = 75
+	damage = 25
+	armor_penetration = 45
+	embedchance = 80
+	speed = 0.6
+
+
+// POISON AMMO
+
 
 /obj/item/ammo_casing/caseless/rogue/arrow/poison
 	name = "poisoned arrow"
 	desc = "Bundles of steam straightened dowels are notched at one end and fastened \
-	to razor heads on another. Furrels cut into "
+	to razor heads on another. Furrels cut into the arrow-head with an intoxicating concoction. \
+	within."
 	projectile_type = /obj/projectile/bullet/reusable/arrow/poison
-	icon_state = "arrow_poison"
-	max_integrity = 20 // same as normal arrow; usually breaks on impact with a mob anyway
+	icon_state = "ironarrow_poison"
+	max_integrity = 10 // same as normal arrow; usually breaks on impact with a mob anyway
 
 /obj/item/ammo_casing/caseless/rogue/arrow/stone/poison
 	name = "poisoned stone arrow"
 	desc = "A simple dowel sports lashed flint honed to a razor edge and knapped \
 	with furrels for carrying poison residue."
 	projectile_type = /obj/projectile/bullet/reusable/arrow/poison/stone
-	icon_state = "stonearrow_poison"
+	icon_state = "arrow_poison"
 
 /obj/projectile/bullet/reusable/arrow/poison
-	name = "poison arrow"
+	name = "poison iron arrow"
 	damage = 20				//You deal a bunch of posion damage as it is, regardless of armor protection.
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -153,7 +182,22 @@
 	poisonfeel = "burning" //Ditto
 	poisonamount = 5 //Support and balance for bodkins, which will hold less poison due to how
 
-//pyro bolts - stonekeep port 
+/obj/projectile/bullet/reusable/arrow/poison/stone
+	name = "poison stone arrow"
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/stone
+
+/obj/projectile/bullet/reusable/arrow/poison/on_hit(atom/target, blocked = FALSE)
+	..()
+	if(!istype(target, /mob/living/simple_animal)) //On-hit for carbon mobs has been moved to projectile act in living_defense.dm, to ensure poison is not applied if armor prevents damage.
+		return
+	var/mob/living/simple_animal/M = target
+	M.show_message(span_danger("You feel an intense burning sensation spreading swiftly from the puncture!")) //In case a player is in control of the mob.
+	addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, adjustToxLoss), 100), 10 SECONDS)
+	addtimer(CALLBACK(M, TYPE_PROC_REF(/atom, visible_message), span_danger("[M] appears greatly weakened by the poison!")), 10 SECONDS)
+
+
+// PYRO AMMO
+
 
 /obj/item/ammo_casing/caseless/rogue/bolt/pyro
 	name = "pyroclastic bolt"
@@ -182,28 +226,14 @@
 	flag = "piercing"
 	speed = 0.3
 
-	var/explode_sound = list('sound/misc/explode/incendiary (1).ogg','sound/misc/explode/incendiary (2).ogg')
-
-	//explosion values
-	var/exp_heavy = 0
-	var/exp_light = 0
-	var/exp_flash = 0
-	var/exp_fire = 1
-
 /obj/projectile/bullet/bolt/pyro/on_hit(target)
-	. = ..()
-	if(ismob(target))
-		var/mob/living/M = target
-		M.adjust_fire_stacks(5)
-//		M.take_overall_damage(0,10) //between this 10 burn, the 10 brute, the explosion brute, and the onfire burn, my at about 65 damage if you stop drop and roll immediately
-	var/turf/T
-	if(isturf(target))
-		T = target
-	else
-		T = get_turf(target)
-	explosion(T, -1, exp_heavy, exp_light, exp_flash, 0, flame_range = exp_fire, soundin = explode_sound)
-
-//pyro arrows
+	..()
+	if(!ismob(target))
+		return
+	var/mob/living/M = target
+	M.adjust_fire_stacks(6)
+	M.adjustFireLoss(15)
+	M.IgniteMob()
 
 /obj/item/ammo_casing/caseless/rogue/arrow/pyro
 	name = "pyroclastic arrow"
@@ -232,38 +262,18 @@
 	flag = "piercing"
 	speed = 0.4
 
-	var/explode_sound = list('sound/misc/explode/incendiary (1).ogg','sound/misc/explode/incendiary (2).ogg')
-
-	//explosion values
-	var/exp_heavy = 0
-	var/exp_light = 0
-	var/exp_flash = 0
-	var/exp_fire = 1
-
 /obj/projectile/bullet/arrow/pyro/on_hit(target)
-	. = ..()
-	if(ismob(target))
-		var/mob/living/M = target
-		M.adjust_fire_stacks(4)
-//		M.take_overall_damage(0,10) //between this 10 burn, the 10 brute, the explosion brute, and the onfire burn, my at about 65 damage if you stop drop and roll immediately
-	var/turf/T
-	if(isturf(target))
-		T = target
-	else
-		T = get_turf(target)
-	explosion(T, -1, exp_heavy, exp_light, exp_flash, 0, flame_range = exp_fire, soundin = explode_sound)
+	..()
+	if(!ismob(target))
+		return
+	var/mob/living/M = target
+	M.adjust_fire_stacks(4)
+	M.adjustFireLoss(10)
+	M.IgniteMob()
 
-/obj/projectile/bullet/reusable/arrow/poison/stone
-	name = "stone arrow"
-	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow/stone
 
-/obj/projectile/bullet/reusable/arrow/poison/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(istype(target, /mob/living/simple_animal)) //On-hit for carbon mobs has been moved to projectile act in living_defense.dm, to ensure poison is not applied if armor prevents damage.
-		var/mob/living/simple_animal/M = target
-		M.show_message(span_danger("You feel an intense burning sensation spreading swiftly from the puncture!")) //In case a player is in control of the mob.
-		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, adjustToxLoss), 100), 10 SECONDS)
-		addtimer(CALLBACK(M, TYPE_PROC_REF(/atom, visible_message), span_danger("[M] appears greatly weakened by the poison!")), 10 SECONDS)
+// GUNPOWDER AMMO
+
 
 /obj/projectile/bullet/reusable/bullet
 	name = "lead ball"

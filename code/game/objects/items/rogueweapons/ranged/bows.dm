@@ -223,13 +223,17 @@
 		spread = 0
 	for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
 		var/obj/projectile/BB = CB.BB
+		BB.accuracy += accfactor * (user.STAPER - 9) * 4 // 9+ PER gives +4 per level. Exponential.
+		BB.bonus_accuracy += (user.STAPER - 8) * 3 // 8+ PER gives +3 per level. Does not decrease over range.
+		BB.bonus_accuracy += (user.mind.get_skill_level(/datum/skill/combat/bows) * 5) // +5 per Bow level.
+
 		if(user.client.chargedprog < 100)
-			BB.damage = BB.damage - (BB.damage * (user.client.chargedprog / 100))
-			BB.embedchance = roll(4 , 10) //mean 22
+			BB.damage -= (BB.damage * (user.client.chargedprog / 100))
+			BB.embedchance /= 2
+			BB.accuracy -= 15
 		else
 			BB.damage = BB.damage
-			BB.embedchance = 95
-		BB.damage = BB.damage * (user.STAPER / 10) * damfactor
+		BB.damage *= damfactor * (user.STAPER > 10 ? user.STAPER / 10 : 1)
 	. = ..()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/update_icon()
@@ -354,6 +358,7 @@
 	icon_state = "longbow"
 	slot_flags = ITEM_SLOT_BACK
 	damfactor = 1.2
+	accfactor = 0.9
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
