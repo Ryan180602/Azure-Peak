@@ -47,6 +47,17 @@
 			"[user] works the lux into [target]'s innards, but nothing happens.",
 			"[user] works the lux into [target]'s innards, but nothing happens.")
 		return FALSE
+	if(target.mind)
+		if(!target.key)
+			display_results(user, target, span_notice("[target]'s heart remains inert. Maybe it will be responsive later."),
+				"[user] works the lux into [target]'s innards, but nothing happens.",
+				"[user] works the lux into [target]'s innards, but nothing happens.")
+			return FALSE	
+		if(alert(target, "Are you ready to face the world, once more?", "Revival", "I must go on", "Let me rest") != "I must go on")
+			display_results(user, target, span_notice("[target]'s heart refuses the lux. They're only in sweet dreams, now."),
+				"[user] works the lux into [target]'s innards, but nothing happens.",
+				"[user] works the lux into [target]'s innards, but nothing happens.")
+			return FALSE
 	display_results(user, target, span_notice("You succeed in restarting [target]'s heart with the infusion of lux."),
 		"[user] works the lux into [target]'s innards.",
 		"[user] works the lux into [target]'s innards.")
