@@ -1034,8 +1034,8 @@
 /area/rogue/indoors/shelter/mountains/decap)
 "aqL" = (
 /obj/effect/decal/carpet/kover_purple{
-	pixel_y = -2;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = -2
 	},
 /obj/machinery/light/rogue/wallfire/candle/floorcandle/alt/pink,
 /turf/open/floor/rogue/tile/harem2,
@@ -2568,9 +2568,9 @@
 /area/rogue/outdoors/exposed/town/keep)
 "aTk" = (
 /obj/structure/flora/roguetree/burnt{
-	pixel_x = -18;
+	color = "#454545";
 	name = "Necra's Hand";
-	color = "#454545"
+	pixel_x = -18
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave/scarymaze)
@@ -3154,10 +3154,10 @@
 /area/rogue/outdoors/mountains/decap/gunduzirak)
 "bde" = (
 /obj/structure/closet/crate/roguecloset/dark{
-	lockid = "locker3";
+	keylock = 1;
 	locked = 1;
-	name = "locker III";
-	keylock = 1
+	lockid = "locker3";
+	name = "locker III"
 	},
 /obj/item/clothing/suit/roguetown/shirt/tunic/white,
 /turf/open/floor/rogue/tile/harem2,
@@ -6567,8 +6567,8 @@
 /area/rogue/under/underdark)
 "cpZ" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "bath3";
 	locked = 1;
+	lockid = "bath3";
 	name = "room III"
 	},
 /turf/open/floor/rogue/tile/brownbrick,
@@ -7132,8 +7132,8 @@
 	},
 /obj/structure/roguemachine/atm{
 	location_tag = "Steward Desk";
-	pixel_y = 0;
-	pixel_x = 32
+	pixel_x = 32;
+	pixel_y = 0
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
@@ -11177,9 +11177,9 @@
 /area/rogue/indoors/town/shop)
 "dVB" = (
 /obj/structure/mineral_door/wood/donjon{
+	dir = 4;
 	locked = 1;
-	lockid = "walls";
-	dir = 4
+	lockid = "walls"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -15470,9 +15470,9 @@
 /area/rogue/under/cave/goblindungeon)
 "fnf" = (
 /obj/effect/decal/carpet/kover_purple{
-	pixel_y = -15;
+	dir = 4;
 	pixel_x = 20;
-	dir = 4
+	pixel_y = -15
 	},
 /turf/open/floor/rogue/tile/harem2,
 /area/rogue/indoors/town/bath)
@@ -17552,8 +17552,8 @@
 /area/rogue/indoors/town)
 "fYU" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "nightmaiden";
 	locked = 1;
+	lockid = "nightmaiden";
 	name = "bathworker quarters"
 	},
 /turf/open/floor/rogue/tile/brownbrick,
@@ -17799,8 +17799,8 @@
 "geb" = (
 /obj/structure/winch{
 	gid = "GroveGate";
-	redstone_id = "GroveGate";
-	name = "gate winch"
+	name = "gate winch";
+	redstone_id = "GroveGate"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
@@ -17916,8 +17916,8 @@
 /obj/item/dye_brush,
 /obj/structure/mirror,
 /obj/effect/decal/carpet/kover_purple{
-	pixel_y = -2;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = -2
 	},
 /turf/open/floor/rogue/tile/harem2,
 /area/rogue/indoors/town/bath)
@@ -18301,12 +18301,12 @@
 "goo" = (
 /obj/structure/rack/rogue/shelf,
 /obj/item/quiver/javelin/iron{
-	pixel_y = 32;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 32
 	},
 /obj/item/quiver/javelin/iron{
-	pixel_y = 32;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 32
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement/keep)
@@ -19239,8 +19239,8 @@
 /area/rogue/outdoors/woods)
 "gBz" = (
 /obj/item/roguekey/nightmaiden{
-	name = "room I key";
-	lockid = "bath1"
+	lockid = "bath1";
+	name = "room I key"
 	},
 /obj/item/roguekey/nightmaiden{
 	lockid = "bath2";
@@ -20544,8 +20544,8 @@
 "gZw" = (
 /obj/structure/chair/bench/couchamagenta,
 /obj/effect/decal/carpet/kover_purple{
-	pixel_y = -2;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = -2
 	},
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/town/bath)
@@ -20937,8 +20937,8 @@
 	icon_state = "longtable"
 	},
 /obj/item/clothing/head/roguetown/helmet/heavy/psydonbarbute,
-/obj/item/clothing/suit/roguetown/armor/plate/half/fluted,
 /obj/item/storage/belt/rogue/leather/steel/tasset,
+/obj/item/clothing/suit/roguetown/armor/plate/half/fluted/ornate,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/church/basement)
 "hfa" = (
@@ -21816,12 +21816,12 @@
 "htQ" = (
 /obj/structure/rack/rogue/shelf,
 /obj/item/flashlight/flare/torch/lantern{
-	pixel_y = 32;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 32
 	},
 /obj/item/flashlight/flare/torch/lantern{
-	pixel_y = 32;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 32
 	},
 /obj/item/flashlight/flare/torch/lantern{
 	pixel_y = 32
@@ -22402,10 +22402,10 @@
 /area/rogue/under/cave/dukecourt)
 "hCc" = (
 /obj/structure/closet/crate/roguecloset/dark{
-	lockid = "locker1";
+	keylock = 1;
 	locked = 1;
-	name = "locker I";
-	keylock = 1
+	lockid = "locker1";
+	name = "locker I"
 	},
 /obj/item/clothing/suit/roguetown/shirt/tunic/white,
 /turf/open/floor/rogue/tile/harem2,
@@ -22764,8 +22764,8 @@
 "hIV" = (
 /obj/structure/winch{
 	gid = "tertiarygate";
-	redstone_id = "tertiarygate";
-	name = "gate winch"
+	name = "gate winch";
+	redstone_id = "tertiarygate"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
@@ -23363,8 +23363,8 @@
 /area/rogue/indoors/town)
 "hUt" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "bath2";
 	locked = 1;
+	lockid = "bath2";
 	name = "room II"
 	},
 /turf/open/floor/rogue/tile/brownbrick,
@@ -23675,8 +23675,8 @@
 /area/rogue/under/town/basement)
 "iaT" = (
 /obj/structure/lever/wall{
-	redstone_id = "prisongate2";
-	dir = 8
+	dir = 8;
+	redstone_id = "prisongate2"
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/cave/goblinfort)
@@ -23942,8 +23942,8 @@
 "ieQ" = (
 /obj/machinery/light/rogue/wallfire/candle/floorcandle/pink,
 /obj/effect/decal/carpet/kover_purple{
-	pixel_y = -2;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = -2
 	},
 /turf/open/floor/rogue/tile/harem2,
 /area/rogue/indoors/town/bath)
@@ -24960,8 +24960,8 @@
 /area/rogue/indoors/town/garrison)
 "ivt" = (
 /obj/structure/roguemachine/mail{
-	pixel_y = -32;
-	mailtag = "Wardens"
+	mailtag = "Wardens";
+	pixel_y = -32
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
@@ -27595,8 +27595,8 @@
 "jpx" = (
 /obj/structure/fluff/pillow/magenta{
 	dir = 8;
-	pixel_y = -8;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -8
 	},
 /turf/open/floor/rogue/tile/harem2,
 /area/rogue/indoors/town/bath)
@@ -29026,8 +29026,8 @@
 	dir = 8
 	},
 /obj/effect/decal/carpet/kover_purple{
-	pixel_y = -2;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = -2
 	},
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors/town/bath)
@@ -29161,10 +29161,10 @@
 /area/rogue/indoors/town/tavern)
 "jSs" = (
 /obj/structure/closet/crate/roguecloset/dark{
-	lockid = "locker2";
+	keylock = 1;
 	locked = 1;
-	name = "locker II";
-	keylock = 1
+	lockid = "locker2";
+	name = "locker II"
 	},
 /obj/item/clothing/suit/roguetown/shirt/tunic/white,
 /turf/open/floor/rogue/tile/harem2,
@@ -31598,8 +31598,8 @@
 /area/rogue/indoors/town)
 "kLJ" = (
 /obj/effect/decal/carpet/kover_purple{
-	pixel_y = 27;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = 27
 	},
 /obj/structure/fluff/statue/shisha/hookah{
 	pixel_x = 14;
@@ -31680,8 +31680,8 @@
 /area/rogue/indoors/town)
 "kNu" = (
 /obj/effect/decal/carpet/kover_purple{
-	pixel_y = -2;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = -2
 	},
 /turf/open/floor/rogue/tile/harem2,
 /area/rogue/indoors/town/bath)
@@ -33606,10 +33606,10 @@
 /area/rogue/indoors/cave)
 "ltI" = (
 /obj/structure/closet/crate/roguecloset/dark{
-	lockid = "locker4";
+	keylock = 1;
 	locked = 1;
-	name = "locker IV";
-	keylock = 1
+	lockid = "locker4";
+	name = "locker IV"
 	},
 /obj/item/clothing/suit/roguetown/shirt/tunic/white,
 /turf/open/floor/rogue/tile/harem2,
@@ -33725,8 +33725,8 @@
 "lvW" = (
 /obj/item/grown/log/tree,
 /obj/item/grown/log/tree{
-	pixel_y = -2;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -2
 	},
 /obj/effect/decal/cleanable/debris/woody,
 /turf/open/floor/rogue/ruinedwood{
@@ -34291,8 +34291,8 @@
 /area/rogue/outdoors/beach/forest)
 "lFJ" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "bath1";
 	locked = 1;
+	lockid = "bath1";
 	name = "room I"
 	},
 /turf/open/floor/rogue/tile/brownbrick,
@@ -36592,8 +36592,8 @@
 "mwY" = (
 /obj/structure/chair/bench/couchamagenta,
 /obj/effect/decal/carpet/kover_purple{
-	pixel_y = -2;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = -2
 	},
 /turf/open/floor/rogue/tile/harem2,
 /area/rogue/indoors/town/bath)
@@ -37089,15 +37089,15 @@
 "mGo" = (
 /obj/structure/rack/rogue/shelf,
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot{
-	pixel_y = 32;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 32
 	},
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot{
 	pixel_y = 32
 	},
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot{
-	pixel_y = 32;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 32
 	},
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot{
 	pixel_y = 32
@@ -40242,8 +40242,8 @@
 /obj/structure/chair/stool/rogue,
 /obj/effect/decal/carpet/square/black{
 	dir = 8;
-	pixel_y = 16;
-	pixel_x = 25
+	pixel_x = 25;
+	pixel_y = 16
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/under/town/sewer)
@@ -42167,8 +42167,8 @@
 	dir = 4
 	},
 /obj/structure/table/wood{
-	icon_state = "longtable";
-	dir = 1
+	dir = 1;
+	icon_state = "longtable"
 	},
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/rogue/tile,
@@ -46869,12 +46869,12 @@
 "pUF" = (
 /obj/structure/rack/rogue/shelf,
 /obj/item/rogueweapon/huntingknife/idagger/steel/special{
-	pixel_y = 32;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 32
 	},
 /obj/item/rogueweapon/huntingknife/idagger/steel/special{
-	pixel_y = 32;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 32
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement/keep)
@@ -48929,12 +48929,6 @@
 /obj/structure/chair/bench/couchablack/r,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
-"qEw" = (
-/turf/closed/wall/mineral/rogue/pipe{
-	icon_state = "iron_corner";
-	dir = 8
-	},
-/area/rogue/under/town/sewer)
 "qEx" = (
 /obj/machinery/light/rogue/torchholder/r,
 /obj/effect/decal/cobbleedge{
@@ -54472,8 +54466,8 @@
 	},
 /obj/structure/roguemachine/atm{
 	location_tag = "Steward Desk";
-	pixel_y = 0;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 0
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
@@ -55066,8 +55060,8 @@
 	icon_state = "longtable"
 	},
 /obj/item/clothing/head/roguetown/helmet/heavy/psydonbarbute,
-/obj/item/clothing/suit/roguetown/armor/plate/half/fluted,
 /obj/item/storage/belt/rogue/leather/steel/tasset,
+/obj/item/clothing/suit/roguetown/armor/plate/half/fluted/ornate,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/church/basement)
 "sKe" = (
@@ -56200,9 +56194,9 @@
 /area/rogue/under/cavewet/bogcaves/sunkencity)
 "tdi" = (
 /obj/structure/lever/wall{
-	redstone_id = "SecondaryDock";
 	pixel_x = 10;
-	pixel_y = 0
+	pixel_y = 0;
+	redstone_id = "SecondaryDock"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -60624,8 +60618,8 @@
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
 /obj/effect/decal/carpet/square/black{
 	dir = 8;
-	pixel_y = 16;
-	pixel_x = 25
+	pixel_x = 25;
+	pixel_y = 16
 	},
 /obj/effect/decal/cleanable/debris/woody{
 	dir = 1
@@ -63679,8 +63673,8 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/candle/eora/lit{
-	pixel_y = 18;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 18
 	},
 /obj/item/reagent_containers/glass/cup/wooden{
 	pixel_x = -6
@@ -64003,8 +63997,8 @@
 /area/rogue/under/cavewet/bogcaves)
 "vFF" = (
 /obj/effect/decal/carpet/kover_purple{
-	pixel_y = -2;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = -2
 	},
 /obj/structure/chair/bench/couchamagenta{
 	color = "#bf67f3"
@@ -64830,8 +64824,8 @@
 	dir = 1
 	},
 /obj/effect/decal/carpet/kover_purple{
-	pixel_y = -2;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = -2
 	},
 /turf/open/floor/rogue/tile/harem2,
 /area/rogue/indoors/town/bath)
@@ -67706,9 +67700,9 @@
 "wPN" = (
 /obj/structure/fermenting_barrel/water,
 /obj/structure/lever/wall{
-	redstone_id = "Physician";
 	pixel_x = 10;
-	pixel_y = 0
+	pixel_y = 0;
+	redstone_id = "Physician"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/physician)
@@ -67822,23 +67816,23 @@
 "wRH" = (
 /obj/item/roguekey{
 	icon_state = "brownkey";
-	name = "locker I key";
-	lockid = "locker1"
+	lockid = "locker1";
+	name = "locker I key"
 	},
 /obj/item/roguekey{
 	icon_state = "brownkey";
-	name = "locker II key";
-	lockid = "locker2"
+	lockid = "locker2";
+	name = "locker II key"
 	},
 /obj/item/roguekey{
 	icon_state = "brownkey";
-	name = "locker III key";
-	lockid = "locker3"
+	lockid = "locker3";
+	name = "locker III key"
 	},
 /obj/item/roguekey{
 	icon_state = "brownkey";
-	name = "locker IV key";
-	lockid = "locker4"
+	lockid = "locker4";
+	name = "locker IV key"
 	},
 /obj/structure/rack/rogue/shelf/biggest,
 /turf/open/floor/rogue/churchbrick,
@@ -140733,7 +140727,7 @@ xAN
 urZ
 mMx
 ylh
-qEw
+pby
 jEk
 tuc
 pLs
