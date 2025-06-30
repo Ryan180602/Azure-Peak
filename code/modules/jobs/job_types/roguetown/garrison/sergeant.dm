@@ -105,6 +105,7 @@
 		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
 		/obj/item/rope/chain = 1,
 		/obj/item/storage/keyring/guardsergeant = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1
 		)
 	H.adjust_blindness(-3)
 	var/weapons = list("Rhomphaia","Flail & Shield","Halberd","Sabre & Crossbow")	//Bit more unique than footsman, you are a jack-of-all-trades + slightly more 'elite'.
@@ -125,6 +126,7 @@
 			beltr = /obj/item/quiver/bolts
 			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 			r_hand = /obj/item/rogueweapon/sword/sabre
+			l_hand = /obj/item/rogueweapon/scabbard/sword
 
 /obj/effect/proc_holder/spell/invoked/order
 	name = ""
