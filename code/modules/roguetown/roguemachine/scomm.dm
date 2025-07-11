@@ -794,6 +794,7 @@
 		raw_message = "<small>[raw_message]</small>"
 	for(var/obj/item/speakerinq/S in SSroguemachine.scomm_machines)
 		S.name = label ? "#[label]" : "#NOTSET"
+		S.name = label ? "#[label]" : "#NOTSET"
 		S.repeat_message(raw_message, src, usedcolor, message_language)
 		S.name = (S.fakename)
 
