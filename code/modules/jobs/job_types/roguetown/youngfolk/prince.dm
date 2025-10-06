@@ -210,12 +210,11 @@
 	//Not standard weighted. Not intended to be considering the stat ceilings. -F
 	subclass_stats = list(
 	STATKEY_STR = -3,
-	STATKEY_CON = -3,
+	STATKEY_CON = -1,
 	STATKEY_SPD = 4,
 	STATKEY_PER = 2,
 	STATKEY_INT = 2,
-	STATKEY_WIL = 1,
-	STATKEY_LCK = 1,
+	STATKEY_WIL = 1
 	)
 	subclass_skills = list(
 		/datum/skill/misc/sneaking = SKILL_LEVEL_MASTER,
