@@ -278,12 +278,6 @@
 		/obj/item/rogueweapon/huntingknife/idagger/silver/stake
 	)
 
-/obj/item/rogueweapon/scabbard/sheath/weapon_check(mob/living/user, obj/item/A)
-	. = ..()
-	if(.)
-		if(!sheathe_icon)
-			return FALSE
-
 /obj/item/rogueweapon/scabbard/sheath/getonmobprop(tag)
 	..()
 
@@ -509,11 +503,6 @@
 	max_integrity = 750
 	sellprice = 3
 
-/obj/item/rogueweapon/scabbard/sheath/weapon_check(mob/living/user, obj/item/A)
-	. = ..()
-	if(.)
-		if(!sheathe_icon)
-			return FALSE
 
 /*
 	KAZENGUN
