@@ -78,7 +78,7 @@
 
 
 /obj/item/chalk/attack_self(mob/living/carbon/human/user)
-	if(!isarcyne(user))//We'll set up other items for other types of rune rituals
+	if(HAS_TRAIT(user, TRAIT_ARCYNE_T1) || !isarcyne(user))
 		to_chat(user, span_cult("Nothing comes in mind to draw with the chalk."))
 		return
 	var/obj/effect/decal/cleanable/roguerune/pickrune

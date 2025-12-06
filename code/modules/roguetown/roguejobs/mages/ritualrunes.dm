@@ -335,7 +335,7 @@ GLOBAL_LIST(teleport_runes)
 	can_be_scribed = TRUE
 	rituals = list(/datum/runeritual/knowledge::name = /datum/runeritual/knowledge)
 	var/buffed = FALSE
- 
+
 /obj/effect/decal/cleanable/roguerune/arcyne/knowledge/invoke(list/invokers, datum/runeritual/runeritual)
 	if(!..())	//VERY important. Calls parent and checks if it fails. parent/invoke has all the checks for ingredients
 		return
