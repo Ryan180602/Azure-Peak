@@ -1573,7 +1573,12 @@
 		addtimer(CALLBACK(src, PROC_REF(ice_crack)), 2 SECONDS, TIMER_UNIQUE)
 		return
 	if(prob(40))
-		H.forceMove(get_step(H, pick(NORTH, SOUTH, EAST, WEST)))
+		var/list/possible_turfs = list()
+		for(var/turf/T in range(1, H))
+			if(T.density)
+				continue
+			possible_turfs += T
+		H.forceMove(pick(possible_turfs))
 		to_chat(H, span_warning("You slip on [src]!"))
 
 /turf/open/floor/rogue/dark_ice/proc/ice_crack()

@@ -1512,6 +1512,7 @@
 	detail_tag = "_detail"
 	detail_color = CLOTHING_WHITE
 	storage = TRUE
+	cold_protection = 5
 
 /obj/item/clothing/cloak/poncho/fancycoat
 	name = "fancy coat"
