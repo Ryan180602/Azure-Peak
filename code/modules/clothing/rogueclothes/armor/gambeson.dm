@@ -18,6 +18,7 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	armor_class = ARMOR_CLASS_LIGHT
+	cold_protection = 5
 	chunkcolor = "#978151"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/councillor

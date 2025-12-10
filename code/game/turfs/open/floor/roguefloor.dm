@@ -259,10 +259,22 @@
 		var/obj/item/I = new /obj/item/natural/dirtclod/snow(src)
 		if(L.put_in_active_hand(I))
 			L.visible_message(span_warning("[L] picks up some snow."))
-			src.ChangeTurf(/turf/open/floor/rogue/snowpatchy, flags = CHANGETURF_INHERIT_AIR)
+			ChangeTurf(/turf/open/floor/rogue/snowpatchy, flags = CHANGETURF_INHERIT_AIR)
 		else
 			qdel(I)
-	.=..()
+
+	. = ..()
+
+/turf/open/floor/rogue/snow/attackby(obj/item/C, mob/user, params)
+	if(istype(C, /obj/item/natural/dirtclod/snow))
+		for(var/elements in contents)
+			if(!istype(elements, /obj/effect/decal/cleanable/blood/footprints/mud))
+				continue
+			QDEL_NULL(elements)
+			to_chat(user, span_notice("You pad out any footprints in [src].."))
+			qdel(C)
+
+	. = ..()
 
 /turf/open/floor/rogue/snow/Crossed(atom/movable/O)
 	..()
@@ -1547,20 +1559,22 @@
 	. = ..()
 	visible_message(span_danger("[src] splinters and breaks away!"))
 	playsound(src, 'sound/foley/waterenter.ogg', 100, FALSE)
-	ChangeTurf(/turf/open/water/ocean, flags = CHANGETURF_INHERIT_AIR)
+	ChangeTurf(/turf/open/water/pond, flags = CHANGETURF_INHERIT_AIR)
 
 /turf/open/floor/rogue/dark_ice/Entered(atom/movable/AM)
 	..()
 	if(!ishuman(AM))
 		return
 	var/mob/living/carbon/human/H = AM
-	if(HAS_TRAIT(H, TRAIT_LIGHT_STEP))
+	if(HAS_TRAIT(H, TRAIT_LIGHT_STEP) || H.m_intent == MOVE_INTENT_SNEAK)
 		return
-	if(!prob(40))
+	if(prob(25))
+		to_chat(H, span_warning("[src] under you begins to crack!"))
+		addtimer(CALLBACK(src, PROC_REF(ice_crack)), 2 SECONDS, TIMER_UNIQUE)
 		return
-	to_chat(H, span_warning("[src] under you begins to crack!"))
-	addtimer(CALLBACK(src, PROC_REF(ice_crack)), 2 SECONDS, TIMER_UNIQUE)
-	return
+	if(prob(40))
+		H.forceMove(get_step(H, pick(NORTH, SOUTH, EAST, WEST)))
+		to_chat(H, span_warning("You slip on [src]!"))
 
 /turf/open/floor/rogue/dark_ice/proc/ice_crack()
 	for(var/mob/living/target in contents)

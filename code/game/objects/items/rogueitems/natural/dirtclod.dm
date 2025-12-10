@@ -8,12 +8,12 @@
 
 /obj/item/natural/dirtclod/snow
 	name = "packed snow"
-	icon_state = "A handful of snow"
+	desc = "A handful of snow"
 	icon_state = "snow1"
 
 /obj/item/natural/dirtclod/snow/Initialize()
-	icon_state = "snow[rand(1,2)]"
 	..()
+	icon_state = "snow[rand(1,2)]"
 
 /obj/item/natural/dirtclod/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/rogueweapon/shovel))

@@ -47,23 +47,23 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 			switch(GLOB.tod)
 				if("dawn")
 					if(prob(25))
-						GLOB.forecast = "rain"
+						GLOB.forecast = "snow"
 				if("day")
 					if(prob(5))
-						GLOB.forecast = "rain"
+						GLOB.forecast = "snow"
 				if("dusk")
 					if(prob(33))
-						GLOB.forecast = "rain"
+						GLOB.forecast = "snow"
 				if("night")
 					if(prob(40))
-						GLOB.forecast = "rain"
+						GLOB.forecast = "snow"
 
-			if(GLOB.forecast == "rain")
+			if(GLOB.forecast == "snow")
 				var/foundnd
-				if(SSParticleWeather?.runningWeather?.target_trait == PARTICLEWEATHER_RAIN)
+				if(SSParticleWeather?.runningWeather?.target_trait == PARTICLEWEATHER_SNOW)
 					foundnd = TRUE
 				if(!foundnd)
-					SSParticleWeather?.run_weather(pick(/datum/particle_weather/rain_gentle, /datum/particle_weather/rain_storm))
+					SSParticleWeather?.run_weather(pick(/datum/particle_weather/snow_storm, /datum/particle_weather/snow_gentle, /datum/particle_weather/hail, /datum/particle_weather/fog))
 		else
 			switch(GLOB.forecast) //end the weather now
 				if("rain")
@@ -71,8 +71,6 @@ GLOBAL_VAR_INIT(dayspassed, FALSE)
 						GLOB.forecast = "rainbow"
 					else
 						GLOB.forecast = null
-				if("rainbow")
-					GLOB.forecast = null
 
 	if(GLOB.tod != oldtod)
 		if(GLOB.tod == "dawn")

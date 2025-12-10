@@ -12,6 +12,8 @@
 	var/overarmor = TRUE
 	var/storage = FALSE
 
+	cold_protection = 3
+
 	grid_width = 64
 	grid_height = 64
 
@@ -670,6 +672,7 @@
 	allowed_race = NON_DWARVEN_RACE_TYPES
 	salvage_result = /obj/item/natural/fur
 	storage = TRUE
+	cold_protection = 10
 
 /obj/item/clothing/cloak/darkcloak/bear
 	name = "direbear cloak"
@@ -679,6 +682,7 @@
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
 	salvage_result = /obj/item/natural/hide/cured
 	salvage_amount = 3
+	cold_protection = 7
 
 /obj/item/clothing/cloak/darkcloak/bear/light
 	name = "light direbear cloak"
@@ -799,6 +803,7 @@
 	inhand_mod = FALSE
 	hoodtype = /obj/item/clothing/head/hooded/rainhood/furhood
 	salvage_result = /obj/item/natural/fur
+	cold_protection = 10
 
 /obj/item/clothing/cloak/raincloak/furcloak/crafted/Initialize()
 	. = ..()
@@ -1490,6 +1495,7 @@
 	name = "snow cloak"
 	desc = "A cloak meant to keep one's body warm in the cold of the mountains as well as the dampness of Azuria."
 	icon_state = "snowcloak"
+	cold_protection = 15
 
 /obj/item/clothing/cloak/poncho
 	name = "cloth poncho"
