@@ -10,7 +10,7 @@
 	sewrepair = TRUE //Vrell - AFAIK, all cloaks are cloth ATM. Technically semi-less future-proof, but it removes a line of code from every subtype, which is worth it IMO.
 	experimental_inhand = FALSE
 	var/overarmor = TRUE
-	var/storage = FALSE
+	var/storage = TRUE
 
 	cold_protection = 3
 
@@ -55,7 +55,6 @@
 	boobed = TRUE
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
 	flags_inv = HIDECROTCH|HIDEBOOB
-	storage = TRUE
 	var/custom_design = FALSE
 
 /obj/item/clothing/cloak/tabard/update_icon()
@@ -142,7 +141,6 @@
 	icon_state = "abyssortabard"
 	item_state = "abyssortabard"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'
-	storage = TRUE
 	custom_design = TRUE
 
 /obj/item/clothing/cloak/tabard/psydontabard
@@ -195,10 +193,6 @@
 			var/mob/living/carbon/H = user
 			H.update_inv_cloak()
 			H.update_inv_armor()
-
-
-/obj/item/clothing/cloak/templar
-	storage = TRUE
 
 /obj/item/clothing/cloak/templar/astratan
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'
@@ -628,7 +622,6 @@
 	allowed_race = NON_DWARVEN_RACE_TYPES
 	detail_tag = "_det"
 	detail_color = CLOTHING_AZURE
-	storage = TRUE
 
 /obj/item/clothing/cloak/lordcloak/update_icon()
 	cut_overlays()
@@ -703,7 +696,6 @@
 	boobed = TRUE
 	allowed_race = CLOTHED_RACES_TYPES
 	flags_inv = HIDECROTCH|HIDEBOOB
-	storage = TRUE
 
 /obj/item/clothing/cloak/apron/blacksmith
 	name = "leather apron"
@@ -762,7 +754,6 @@
 	hoodtype = /obj/item/clothing/head/hooded/rainhood
 	toggle_icon_state = FALSE
 	salvage_result = /obj/item/natural/hide/cured
-	storage = TRUE
 
 /obj/item/clothing/cloak/raincloak/red
 	color = CLOTHING_RED
@@ -968,7 +959,6 @@
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
 	alternate_worn_layer = CLOAK_BEHIND_LAYER
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
-	storage = TRUE
 
 /obj/item/clothing/cloak/half
 	name = "halfcloak"
@@ -988,7 +978,6 @@
 	allowed_sex = list(MALE, FEMALE)
 	flags_inv = null
 	var/flipped = FALSE
-	storage = TRUE
 
 /obj/item/clothing/cloak/half/attack_right(mob/user)
 	if(!flipped)
@@ -1050,7 +1039,6 @@
 	icon_state = "thiefcloak"
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
 	color = CLOTHING_ORANGE
-	storage = TRUE
 
 /obj/item/clothing/cloak/thief_cloak/yoruku
 	color = CLOTHING_BLACK
@@ -1224,55 +1212,6 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 
-
-/obj/item/clothing/head/roguetown/helmet/heavy/blkknight
-	name = "blacksteel helmet"
-	icon_state = "bkhelm"
-	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
-
-/obj/item/clothing/head/roguetown/helmet/heavy/blkknight/ComponentInitialize()
-	AddComponent(/datum/component/adjustable_clothing, (HEAD|EARS|HAIR), (HIDEEARS|HIDEHAIR), null, 'sound/items/visor.ogg', null, UPD_HEAD)
-
-/obj/item/clothing/head/roguetown/helmet/heavy/blkknight/attackby(obj/item/W, mob/living/user, params)
-	..()
-	if(istype(W, /obj/item/natural/feather) && !detail_tag)
-		var/choice = input(user, "Choose a color.", "Plume") as anything in colorlist
-		user.visible_message(span_warning("[user] adds [W] to [src]."))
-		user.transferItemToLoc(W, src, FALSE, FALSE)
-		detail_color = colorlist[choice]
-		detail_tag = "_detail"
-		update_icon()
-		if(loc == user && ishuman(user))
-			var/mob/living/carbon/H = user
-			H.update_inv_head()
-	if(istype(W, /obj/item/natural/cloth) && !altdetail_tag)
-		var/choicealt = input(user, "Choose a color.", "Orle") as anything in colorlist
-		user.visible_message(span_warning("[user] adds [W] to [src]."))
-		user.transferItemToLoc(W, src, FALSE, FALSE)
-		altdetail_color = colorlist[choicealt]
-		altdetail_tag = "_detailalt"
-		update_icon()
-		if(loc == user && ishuman(user))
-			var/mob/living/carbon/H = user
-			H.update_inv_head()
-
-/obj/item/clothing/head/roguetown/helmet/heavy/blkknight/update_icon()
-	cut_overlays()
-	if(get_detail_tag())
-		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
-		pic.appearance_flags = RESET_COLOR
-		if(get_detail_color())
-			pic.color = get_detail_color()
-		add_overlay(pic)
-	if(get_altdetail_tag())
-		var/mutable_appearance/pic2 = mutable_appearance(icon(icon, "[icon_state][altdetail_tag]"))
-		pic2.appearance_flags = RESET_COLOR
-		if(get_altdetail_color())
-			pic2.color = get_altdetail_color()
-		add_overlay(pic2)
-
-
 /obj/item/clothing/cloak/tabard/blkknight
 	name = "blood sash"
 	icon_state = "bksash"
@@ -1299,7 +1238,7 @@
 	icon_state = "bktrinket"
 	max_integrity = 666 //Exceptionally strong, can be purchased multiple times, and provides a flat +2 to the entire statblock. If it gets destroyed in a fight, that's fair game. Reduced from the original value of 100,000.
 	armor = ARMOR_DRAGONSCALE
-	prevent_crits = list(BCLASS_CUT,BCLASS_BLUNT)
+	prevent_crits = PREVENT_CRITS_NONE
 	blocksound = PLATEHIT
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
@@ -1440,7 +1379,6 @@
 	icon_state = "naledisash"
 	item_state = "naledisash"
 	desc = "A limp piece of fabric traditionally used to fasten bags that are too baggy, but in modern days has become more of a fashion statement than anything."
-	storage = TRUE
 
 /obj/item/clothing/cloak/tabard/stabard/grenzelmage
 	name = "grenzelhoftian magos mantle"
@@ -1462,7 +1400,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
-	storage = TRUE
 
 /obj/item/clothing/cloak/graggar
 	name = "vicious cloak"
@@ -1489,7 +1426,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
-	storage = TRUE
 
 /obj/item/clothing/cloak/forrestercloak/snow
 	name = "snow cloak"
@@ -1566,7 +1502,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
-	storage = TRUE
 
 /obj/item/clothing/cloak/ordinatorcape
 	name = "ordinator cape"
@@ -1578,7 +1513,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
-	storage = TRUE
 
 /obj/item/clothing/cloak/absolutionistrobe
 	name = "absolver's robe"
@@ -1590,7 +1524,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
-	storage = TRUE
 
 /obj/item/clothing/cloak/cotehardie
 	name = "fitted coat"
@@ -1680,4 +1613,3 @@
 	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
 	color = "#FFFFFF"
 	detail_color = "#FFFFFF"
-	storage = TRUE
