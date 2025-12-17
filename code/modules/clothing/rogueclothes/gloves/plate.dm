@@ -42,6 +42,12 @@
 	icon_state = "agauntlets"
 	smeltresult = /obj/item/ingot/aaslag
 
+/obj/item/clothing/gloves/roguetown/plate/atgervi
+	name = "beast claws"
+	desc = "A menacing pair of plated claws, whose forging methods are a closely protected tradition of the Shamans. The four claws embodying the Four Great Beasts, decorated with symbols of the Gods they praise and the Gods they reject."
+	icon_state = "atgervi_shaman_gloves"
+	item_state = "atergvi_shaman_gloves"
+
 /obj/item/clothing/gloves/roguetown/plate/graggar
 	name = "vicious gauntlets"
 	desc = "Plate gauntlets which carry the motive force of this world, violence."

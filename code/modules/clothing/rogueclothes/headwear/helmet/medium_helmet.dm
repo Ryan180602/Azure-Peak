@@ -293,6 +293,19 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	smeltresult = /obj/item/ingot/steel //STOP TOUCHING THE FOV IT IS NOT MEANT TO HAVE A FULL HELMET BLOCK ON IT THIS IS THE 3RD TIME SOMEONE DONE THIS.
 
+/obj/item/clothing/head/roguetown/helmet/bascinet/atgervi
+	name = "owl helmet"
+	desc = "A carefully forged steel helmet in the shape of an owl's face, with added chain to cover the face and neck against many blows."
+	icon_state = "atgervi_raider"
+	item_state = "atgervi_raider"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDESNOUT
+	body_parts_covered = FULL_HEAD|NECK
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/32x48/atgervi.dmi'
+	bloody_icon = 'icons/effects/blood64.dmi'
+	block2add = null
+	worn_x_dimension = 32
+	worn_y_dimension = 48
+
 /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
 	name = "pigface bascinet"
 	desc = "A steel bascinet helmet with a pigface visor that protects the entire head and face. Add a feather to show the colors of your family or allegiance."

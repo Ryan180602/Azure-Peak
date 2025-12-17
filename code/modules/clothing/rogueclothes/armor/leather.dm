@@ -113,6 +113,12 @@
 	prevent_crits = PREVENT_CRITS_MOST
 	sellprice = 20
 
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/atgervi
+	name = "shamanic coat"
+	desc = "A furred, protective coat. Often made by hand, it embodies the second trial of the Iskarn Shamans: To honor the leopard is to desire for more."
+	icon_state = "atgervi_shaman_coat"
+	item_state = "atgervi_shaman_coat"
+
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 	name = "hardened leather coat"
 	desc = "A heavy steerhide jerkin that reaches past the hips and better protects the vitals."

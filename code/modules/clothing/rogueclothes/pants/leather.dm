@@ -47,6 +47,12 @@
 	icon_state = "apothpants"
 	item_state = "apothpants"
 
+/obj/item/clothing/under/roguetown/trou/leather/atgervi
+	name = "fur pants"
+	desc = "Thick fur pants made to endure the coldest winds, offering a share of protection from the fangs and claws of beasts and men alike."
+	icon_state = "atgervi_pants"
+	item_state = "atgervi_pants"
+
 /obj/item/clothing/under/roguetown/trou/artipants
 	name = "tinker trousers"
 	desc = "Thick leather trousers designed to protect the wearer from sparks or stray gear projectiles. Judging by the scouring, its had plenty of use."

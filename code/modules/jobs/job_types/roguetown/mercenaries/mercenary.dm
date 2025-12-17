@@ -22,8 +22,6 @@
 	job_subclasses = list(
 		/datum/advclass/mercenary/anthrax,
 		/datum/advclass/mercenary/anthrax/assasin,
-		/datum/advclass/mercenary/atgervi,
-		/datum/advclass/mercenary/atgervi/shaman,
 		/datum/advclass/mercenary/etrusca/condottiero,
 		/datum/advclass/mercenary/etrusca/balestrieri,
 		/datum/advclass/mercenary/desert_rider,
@@ -38,7 +36,8 @@
 		/datum/advclass/mercenary/grenzelhoft/crossbowman,
 		/datum/advclass/mercenary/grenzelhoft/mage,
 		/datum/advclass/mercenary/gronn,
-		/datum/advclass/mercenary/gronnheavy,
+		/datum/advclass/mercenary/gronn/heavy,
+		/datum/advclass/mercenary/gronn/varangian,
 		/datum/advclass/mercenary/routier,
 		/datum/advclass/mercenary/rumaclan,
 		/datum/advclass/mercenary/rumaclan/sasu,

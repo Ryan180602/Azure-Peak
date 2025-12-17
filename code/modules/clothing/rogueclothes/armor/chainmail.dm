@@ -57,6 +57,13 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 	smelt_bar_num = 2
 
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi
+	name = "varangian hauberk"
+	desc = "The pride of the Highland mercenaries, this hauberk is a well crafted blend of chain and leather woven into a dense, protective coat."
+	icon_state = "atgervi_raider_mail"
+	item_state = "atgervi_raider_mail"
+	max_integrity = 400
+
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron
 	name = "iron hauberk"
 	desc = "A longer iron maille that protects the legs, still doesn't protect against arrows though."

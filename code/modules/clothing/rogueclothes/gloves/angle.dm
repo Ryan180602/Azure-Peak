@@ -33,3 +33,10 @@
 	icon_state = "clothwraps"
 	item_state = "clothwraps"
 	color = "#ffffff"
+
+/obj/item/clothing/gloves/roguetown/angle/atgervi
+	name = "fur-lined leather gloves"
+	desc = "Dense, padded gloves made for the harshest of climates and the wildest of beasts encountered in the untamed highlands."
+	icon_state = "atgervi_raider_gloves"
+	item_state = "atgervi_raider_gloves"
+	color = "#ffffff"
