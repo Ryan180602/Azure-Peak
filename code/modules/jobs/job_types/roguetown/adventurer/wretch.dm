@@ -36,7 +36,6 @@
 		/datum/advclass/wretch/berserker,
 		/datum/advclass/wretch/hedgemage,
 		/datum/advclass/wretch/necromancer,
-		/datum/advclass/wretch/heretic,
 		/datum/advclass/wretch/heretic/spy,
 		/datum/advclass/wretch/outlaw,
 		/datum/advclass/wretch/outlaw/marauder,
