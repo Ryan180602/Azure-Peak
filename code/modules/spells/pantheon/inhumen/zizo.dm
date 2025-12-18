@@ -88,19 +88,11 @@
 	to_chat(user, span_danger("[src] crumbles into dust..."))
 	qdel(src)
 
-// T2: just use lesser animate undead for now
+// T2: wither as a temporary replacement to free skelelons.
 
-/obj/effect/proc_holder/spell/invoked/raise_undead_formation/miracle
+/obj/effect/proc_holder/spell/invoked/wither/miracle
 	miracle = TRUE
-	devotion_cost = 75
-	cabal_affine = TRUE
-	to_spawn = 2
-
-// T2: carbon spawn
-
-/obj/effect/proc_holder/spell/invoked/raise_undead_guard/miracle
-	miracle = TRUE
-	devotion_cost = 75
+	devotion_cost = 30
 
 // T3: tames bio_type = undead mobs
 
