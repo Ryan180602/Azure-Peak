@@ -21,7 +21,7 @@
 
 	if(HAS_TRAIT(src, TRAIT_CHUNKYFINGERS))
 		return FALSE
-	if(pulledby || pulling)
+	if(pulling)
 		return FALSE
 	if(world.time < last_parry + setparrytime)
 		if(!istype(rmb_intent, /datum/rmb_intent/riposte))
