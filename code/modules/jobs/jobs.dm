@@ -157,7 +157,6 @@ GLOBAL_LIST_INIT(wanderer_positions, list(
 	"Mercenary",
 	"Bandit",
 	"Assassin",
-	"Court Agent",
 	"Wretch",
 ))
 
