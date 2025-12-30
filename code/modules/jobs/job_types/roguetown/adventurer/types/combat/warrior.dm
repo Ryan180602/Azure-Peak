@@ -208,7 +208,7 @@
 	tutorial = "You are a brutal warrior, who has foregone armor in favor of pure strength. Crush your enemies, see them driven before you, and hear the lamentations of their women! Oh, and you can specialize in unarmed combat and wrestling."
 	outfit = /datum/outfit/job/roguetown/adventurer/barbarian
 	cmode_music = 'sound/music/cmode/antag/combat_darkstar.ogg'
-	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_CRITICAL_RESISTANCE, TRAIT_NOPAINSTUN)
+	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_IGNOREDAMAGESLOWDOWN)
 	subclass_stats = list(
 		STATKEY_STR = 3,
 		STATKEY_CON = 2,
@@ -276,6 +276,7 @@
 				ADD_TRAIT(H, TRAIT_CIVILIZEDBARBARIAN, TRAIT_GENERIC)
 				head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 				gloves = /obj/item/clothing/gloves/roguetown/bandages/weighted
+				armor = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple/barbarian
 		belt = /obj/item/storage/belt/rogue/leather/battleskirt/barbarian
 		pants = /obj/item/clothing/under/roguetown/heavy_leather_pants/bronzeskirt
 		shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
