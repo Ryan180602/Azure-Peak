@@ -10,11 +10,9 @@
 	traits_applied = list(TRAIT_MAGEARMOR, TRAIT_ARCYNE_T3, TRAIT_DODGEEXPERT, TRAIT_ALCHEMY_EXPERT)
 	subclass_stats = list(
 		STATKEY_INT = 3,
-		STATKEY_WIL = 3,
+		STATKEY_WIL = 1,
 		STATKEY_PER = 2, // Adv mage get 2 perception so whatever. It is useful for aiming body parts but have no direct synergy with spells. 
-		STATKEY_LCK = 2,
-		STATKEY_SPD = 1,
-		STATKEY_CON = 1,
+		STATKEY_LCK = 1,
 	)
 	age_mod = /datum/class_age_mod/bandit/rogue_mage
 	subclass_skills = list(

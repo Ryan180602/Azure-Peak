@@ -9,11 +9,9 @@
 	cmode_music = 'sound/music/cmode/antag/combat_thewall.ogg' // big chungus gets the wall too
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_HEAVYARMOR, TRAIT_NOBLE)
 	subclass_stats = list(
-		STATKEY_CON = 3, //dark souls 3 dual greatshield moment
+		STATKEY_CON = 2, //dark souls 3 dual greatshield moment
 		STATKEY_STR = 2,
 		STATKEY_WIL = 2,
-		STATKEY_LCK = 2,
-		STATKEY_INT = 1,
 		STATKEY_SPD = 1,
 	)
 	subclass_skills = list(

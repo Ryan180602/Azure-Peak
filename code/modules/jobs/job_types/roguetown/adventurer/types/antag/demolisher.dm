@@ -12,11 +12,9 @@
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_STEELHEARTED, TRAIT_ALCHEMY_EXPERT, TRAIT_EXPLOSIVE_SUPPLY, TRAIT_BOMBER_EXPERT)
 	subclass_stats = list(
 		STATKEY_STR = 1,
-		STATKEY_WIL = 4, //extreme VVV
-		STATKEY_CON = 4, //hardy
+		STATKEY_WIL = 3, //extreme VVV
+		STATKEY_CON = 3, //hardy
 		STATKEY_SPD = -2, //slow
-		STATKEY_LCK = 1,
-		STATKEY_INT = 2
 	)
 	subclass_skills = list(
 		/datum/skill/combat/maces = SKILL_LEVEL_EXPERT,

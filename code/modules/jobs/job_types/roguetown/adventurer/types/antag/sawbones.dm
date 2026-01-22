@@ -10,7 +10,7 @@
 	subclass_stats = list(
 		STATKEY_INT = 4,
 		STATKEY_SPD = 3,
-		STATKEY_LCK = 3
+		STATKEY_LCK = 1
 	)
 	age_mod = /datum/class_age_mod/bandit/sawbones
 	subclass_skills = list(
