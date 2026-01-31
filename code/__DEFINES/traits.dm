@@ -21,6 +21,7 @@
 #define TRAIT_EXPLOSIVE_SUPPLY "Explosive Supply"
 #define TRAIT_BOMBER_EXPERT "Explosive Specialist"
 #define TRAIT_BREADY "Battleready"
+#define TRAIT_CHARGEIMMUNE "Charge Immune"
 #define TRAIT_ARMOUR_LIKED "Fitting Armour"
 #define TRAIT_ARMOUR_DISLIKED "Misfitting Armour"
 #define TRAIT_FENCERDEXTERITY "Fencer's Dexterity"
@@ -317,6 +318,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_DEFILED_NOBLE = span_blue("I'm of noble blood but... Something feels off!"),
 	TRAIT_EMPATH = span_info("I can notice when people are in pain."),
 	TRAIT_EXPLOSIVE_SUPPLY = span_info("I have very good friends! I get explosives on my HERMES every day."),
+	TRAIT_CHARGEIMMUNE = span_green("My stance is firm, I won't topple over when charged at."),
 	TRAIT_BREADY = span_info("Defensive stance does not passively fatigue me. I regain energy slowly over time."),
 	TRAIT_ARMOUR_LIKED = span_greentext("I'm wearing something more suited to my style."),
 	TRAIT_ARMOUR_DISLIKED = span_warning("I'm wearing something that burdens me."),

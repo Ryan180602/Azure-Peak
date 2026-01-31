@@ -182,6 +182,10 @@
 				return FALSE
 			var/mob/living/L = M
 
+			if(HAS_TRAIT(L, TRAIT_CHARGEIMMUNE))
+				L.visible_message("[L] resists [src]'s charge!")
+				return FALSE
+
 			var/self_points = FLOOR((STACON + STASTR)/2, 1)
 			var/target_points = FLOOR((L.STACON + L.STASTR)/2, 1)
 
@@ -231,11 +235,15 @@
 				clash_blocked = TRUE
 			if(self_points > target_points)
 				L.Knockdown(1)
+				ADD_TRAIT(L, TRAIT_CHARGEIMMUNE, TRAIT_GENERIC)
+				addtimer(CALLBACK(L, PROC_REF(remove_charge_immunity)), 12 SECONDS)
 			if(self_points < target_points)
 				Knockdown(30)
 			if(self_points == target_points)
 				L.Knockdown(1)
 				Knockdown(30)
+				ADD_TRAIT(L, TRAIT_CHARGEIMMUNE, TRAIT_GENERIC)
+				addtimer(CALLBACK(L, PROC_REF(remove_charge_immunity)), 6 SECONDS)
 			Immobilize(5)
 			var/playsound = FALSE
 			if(L.apply_damage(15, BRUTE, "chest", L.run_armor_check("chest", "blunt", damage = 10)))
@@ -285,6 +293,16 @@
 		if(!istype(M, /obj/item/clothing))
 			if(prob(I.block_chance*2))
 				return
+
+/mob/living/proc/remove_charge_immunity()
+	if(!isliving(src))
+		return FALSE
+	if(!HAS_TRAIT(src, TRAIT_CHARGEIMMUNE))
+		return FALSE
+
+	REMOVE_TRAIT(src, TRAIT_CHARGEIMMUNE, TRAIT_GENERIC)
+	to_chat(src, span_warning("I'm no longer sturdy - charges will knock me down, once more."))
+	return TRUE
 
 //Called when we bump onto an obj
 /mob/living/proc/ObjBump(obj/O)

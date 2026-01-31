@@ -358,7 +358,12 @@
 	. = ..()
 	if(owner)
 		owner.stamina = max((owner.stamina - owner.max_stamina / 2), 0)
+		ADD_TRAIT(owner, TRAIT_CHARGEIMMUNE, TRAIT_STATUS_EFFECT)
 		to_chat(owner, span_notice("Tempo!!"))
+
+/datum/status_effect/buff/tempo_two/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner, TRAIT_CHARGEIMMUNE, TRAIT_STATUS_EFFECT)
 
 #define TEMPO_MAX_FILTER "tempo_max_glow"
 
