@@ -8,7 +8,7 @@
 	(+1 Willpower, +1 Perception)"
 	skin_tone_wording = "Ancestry"
 	default_color = "FFFFFF"
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS_PARTSONLY)
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS)
 	allowed_taur_types = list(
 		/obj/item/bodypart/taur/lamia,
 		/obj/item/bodypart/taur/spider,
