@@ -1,4 +1,6 @@
-// Wretch, soft antagonists. Giving them 9 points as stat (matching mercs) on average since they're a driving antagonist on AP or assistant antagonist. 
+// Wretch, soft antagonists. Giving them 9 points as stat (matching mercs) on average since they're a driving antagonist on AP or assistant antagonist.
+#define MAX_WRETCH_SLOTS 10
+
 /datum/job/roguetown/wretch
 	title = "Wretch"
 	flag = WRETCH
@@ -153,7 +155,7 @@
 			break
 	result["major_antag_active"] = major_antag_active
 
-	// Tier 2: Garrison-gated expansion from 10 to 15
+	// Tier 2: Garrison-gated expansion metadata. Final wretch slots remain capped at 10.
 	var/garrison_count = SSgamemode.garrison
 	var/holy_count = SSgamemode.holy_warrior
 	var/acolyte_count = SSgamemode.half_combatant
@@ -168,6 +170,7 @@
 		tier2_max = min(max(0, combat_count - 10), 5)
 		slots += tier2_max
 	result["tier2_extra"] = tier2_max
+	slots = min(slots, MAX_WRETCH_SLOTS)
 	result["final_slots"] = slots
 
 	return result
@@ -226,3 +229,5 @@
 /proc/update_scaling_slots(override_player_count)
 	update_wretch_slots(override_player_count)
 	update_adventurer_slots(override_player_count)
+
+#undef MAX_WRETCH_SLOTS
