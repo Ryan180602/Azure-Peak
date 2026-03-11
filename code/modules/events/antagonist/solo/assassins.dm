@@ -52,6 +52,11 @@
 	typepath = /datum/round_event/antagonist/solo/assassins
 	antag_datum = /datum/antagonist/assassin
 
+/datum/round_event_control/antagonist/solo/assassins/preRunEvent()
+	if(istype(SSgamemode.current_storyteller, /datum/storyteller/eora) || SSgamemode.selected_storyteller == /datum/storyteller/eora)
+		return EVENT_CANT_RUN
+	return ..()
+
 /datum/round_event/antagonist/solo/assassins/start()
 	var/datum/job/assassin_job = SSjob.GetJob("Assassin")
 	assassin_job.total_positions = length(setup_minds)

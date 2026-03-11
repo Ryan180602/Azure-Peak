@@ -23,4 +23,9 @@
 
 	restricted_roles = DEFAULT_ANTAG_BLACKLISTED_ROLES
 
+/datum/round_event_control/antagonist/solo/werewolf/preRunEvent()
+	if(istype(SSgamemode.current_storyteller, /datum/storyteller/eora) || SSgamemode.selected_storyteller == /datum/storyteller/eora)
+		return EVENT_CANT_RUN
+	return ..()
+
 /datum/round_event/antagonist/solo/werewolf

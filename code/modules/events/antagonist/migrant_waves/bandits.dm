@@ -1,5 +1,5 @@
 /datum/round_event_control/antagonist/migrant_wave/banditsorgnolls
-	name = "Bandits or gnolls Migration"
+	name = "Bandits or Gnolls Migration"
 	typepath = /datum/round_event/migrant_wave/banditsorgnolls
 	wave_type = /datum/migrant_wave/bandit
 	max_occurrences = 2
@@ -13,6 +13,11 @@
 		TAG_COMBAT,
 		TAG_VILLIAN,
 	)
+
+/datum/round_event_control/antagonist/migrant_wave/bandits/preRunEvent()
+	if(istype(SSgamemode.current_storyteller, /datum/storyteller/eora) || SSgamemode.selected_storyteller == /datum/storyteller/eora)
+		return EVENT_CANT_RUN
+	return ..()
 
 /datum/round_event/migrant_wave/banditsorgnolls/start()
 	var/evilmode = pick("gnolls", "bandits")

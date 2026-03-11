@@ -24,6 +24,11 @@
 
 	restricted_roles = DEFAULT_ANTAG_BLACKLISTED_ROLES
 
+/datum/round_event_control/antagonist/solo/vampires/preRunEvent()
+	if(istype(SSgamemode.current_storyteller, /datum/storyteller/eora) || SSgamemode.selected_storyteller == /datum/storyteller/eora)
+		return EVENT_CANT_RUN
+	return ..()
+
 /datum/round_event/antagonist/solo/vampire
 	var/leader = FALSE
 

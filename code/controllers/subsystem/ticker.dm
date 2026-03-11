@@ -343,6 +343,11 @@ SUBSYSTEM_DEF(ticker)
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			readied_count++
 	var/estimated_pop = round(readied_count * 1.1)
+	if(istype(SSgamemode.current_storyteller, /datum/storyteller/eora) || SSgamemode.selected_storyteller == /datum/storyteller/eora)
+		var/datum/job/gnoll_job = SSjob.GetJob("Gnoll")
+		if(gnoll_job)
+			gnoll_job.total_positions = 0
+			gnoll_job.spawn_positions = 0
 	update_scaling_slots(estimated_pop)
 
 	can_continue = can_continue && SSjob.DivideOccupations(list()) 				//Distribute jobs

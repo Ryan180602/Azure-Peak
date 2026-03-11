@@ -31,14 +31,19 @@ SUBSYSTEM_DEF(vote)
 				C << browse(null, "window=vote;can_close=0;size=[vote_width]x[vote_height]")
 			reset()
 		else
-			var/datum/browser/noclose/client_popup
 			for(var/client/C in voting)
-				client_popup = new(C, "vote", "Voting Panel", nwidth = vote_width, nheight = vote_height)
-				client_popup.set_window_options("can_close=0")
-				client_popup.width = vote_width
-				client_popup.height = vote_height
-				client_popup.set_content(interface(C))
-				client_popup.open(FALSE)
+				show_vote(C)
+
+
+/datum/controller/subsystem/vote/proc/show_vote(client/C)
+	if(!C)
+		return
+	var/datum/browser/noclose/client_popup = new(C, "vote", "Voting Panel", nwidth = vote_width, nheight = vote_height)
+	client_popup.set_window_options("can_close=0")
+	client_popup.width = vote_width
+	client_popup.height = vote_height
+	client_popup.set_content(interface(C))
+	client_popup.open(FALSE)
 
 
 /datum/controller/subsystem/vote/proc/reset()
@@ -293,6 +298,8 @@ SUBSYSTEM_DEF(vote)
 			for(var/mob/M in GLOB.player_list)
 				SEND_SOUND(M, vote_alert)
 		to_chat(world, "\n<font color='purple'><b>[text]</b>\nClick <a href='?src=[REF(src)]'>here</a> to place your vote.\nYou have [DisplayTimeText(vp)] to vote.</font>")
+		for(var/client/C in GLOB.clients)
+			show_vote(C)
 		time_remaining = round(vp/10)
 //		for(var/c in GLOB.clients)
 //			var/client/C = c
@@ -314,6 +321,7 @@ SUBSYSTEM_DEF(vote)
 		text += "\n[question]"
 	var/remaining_time = time_remaining * 10
 	to_chat(C, "\n<font color='purple'><b>[text]</b>\nClick <a href='?src=[REF(src)]'>here</a> to place your vote.\nYou have [DisplayTimeText(remaining_time)] to vote.</font>")
+	show_vote(C)
 
 /datum/controller/subsystem/vote/proc/interface(client/C)
 	if(!C)
@@ -437,12 +445,7 @@ SUBSYSTEM_DEF(vote)
 /mob/verb/vote()
 	set category = "OOC"
 	set name = "Vote"
-	var/datum/browser/noclose/popup = new(src, "vote", "Voting Panel")
-	popup.set_window_options("can_close=0")
-	popup.width = SSvote.vote_width
-	popup.height = SSvote.vote_height
-	popup.set_content(SSvote.interface(client))
-	popup.open(FALSE)
+	SSvote.show_vote(client)
 
 /datum/action/vote
 	name = "Vote!"

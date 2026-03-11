@@ -13,6 +13,11 @@
 		TAG_COMBAT,
 	)
 
+/datum/round_event_control/antagonist/migrant_wave/werewolf/preRunEvent()
+	if(istype(SSgamemode.current_storyteller, /datum/storyteller/eora) || SSgamemode.selected_storyteller == /datum/storyteller/eora)
+		return EVENT_CANT_RUN
+	return ..()
+
 /datum/migrant_wave/werewolf
 	name = "Exiled Adventurer (Verevolf)"
 	roles = list(

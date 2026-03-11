@@ -352,6 +352,17 @@
 	welcome_text = "\"Love is in the air? Nay; tis the smell of freshly-baked pies upon the windowsills!\""
 	color_theme = "#9966CC"
 	preferred_gnoll_mode = GNOLL_SCALING_SINGLE
+	guarantees_roundstart_roleset = FALSE
+
+	starting_point_multipliers = list(
+		EVENT_TRACK_MUNDANE = 1,
+		EVENT_TRACK_PERSONAL = 1,
+		EVENT_TRACK_MODERATE = 1,
+		EVENT_TRACK_INTERVENTION = 1,
+		EVENT_TRACK_CHARACTER_INJECTION = 0,
+		EVENT_TRACK_OMENS = 1,
+		EVENT_TRACK_RAIDS = 1,
+	)
 
 	tag_multipliers = list(
 		TAG_WIDESPREAD = 1.5,
@@ -363,7 +374,7 @@
 		EVENT_TRACK_PERSONAL = 1.4,
 		EVENT_TRACK_MODERATE = 1,
 		EVENT_TRACK_INTERVENTION = 2,
-		EVENT_TRACK_CHARACTER_INJECTION = 0.3,	//Low-chance antagonist spawn
+		EVENT_TRACK_CHARACTER_INJECTION = 0,	//No antagonist spawns.
 		EVENT_TRACK_OMENS = 1,
 		EVENT_TRACK_RAIDS = 0,
 	)
