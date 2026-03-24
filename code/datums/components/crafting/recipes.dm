@@ -215,7 +215,7 @@
 				if(WLENGTH_GREAT)
 					html += "Great<br>"
 
-		if(bookweapon.alt_intents)
+		if(bookweapon.has_altgrip_modes())
 			html += "\n<b>GRIP: ALT-GRIP (right click while in hand)</b><br>"
 		if(bookweapon.gripped_intents)
 			html += "\n<b>TWO-HANDED: Yes</b><br>"
