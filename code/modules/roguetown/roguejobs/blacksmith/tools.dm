@@ -43,6 +43,9 @@
 /obj/item/rogueweapon/hammer/attack_obj(obj/attacked_object, mob/living/user)
 	if(!isliving(user) || !user.mind)
 		return
+	if(obj_broken)
+		to_chat(user, span_warning("[src] is too damaged to repair anything."))
+		return
 
 	if(isbodypart(attacked_object) && !user.cmode)
 		repair_bodypart(attacked_object, user)
@@ -138,6 +141,8 @@
 				if(attacked_item.body_parts_covered != attacked_item.body_parts_covered_dynamic)
 					user.visible_message(span_info("[user] repairs [attacked_item]'s coverage!"))
 					attacked_item.repair_coverage()
+				if(!(locate(/obj/machinery/anvil) in attacked_item.loc))
+					take_damage(10, BRUTE, "blunt", FALSE)
 			if(attacked_item.obj_broken && attacked_item.obj_integrity == attacked_item.max_integrity)
 				attacked_item.obj_fix()
 			user.mind.add_sleep_experience(attacked_item.anvilrepair, exp_gained/2) //We gain as much exp as we fix divided by 2
@@ -230,7 +235,7 @@
 	desc = "A makeshift hammer, made with a crudly chisled-down rock."
 	icon_state = "hammer_r"
 	force = 18
-	max_integrity = 15
+	max_integrity = 50
 
 /obj/item/rogueweapon/hammer/aalloy
 	name = "decrepit hammer"
@@ -255,7 +260,7 @@
 	desc = "A copper hammer, slightly better than a stone hammer."
 	icon_state = "hammer_c"
 	force = 20
-	max_integrity = 100
+	max_integrity = 150
 
 /obj/item/rogueweapon/hammer/iron	// iron hammer
 	name = "hammer"
