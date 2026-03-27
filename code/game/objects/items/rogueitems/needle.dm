@@ -70,7 +70,7 @@
 			return
 
 		to_chat(user, "I begin threading the needle with additional fibers...")
-		if(do_after(user, 6 SECONDS - user.get_skill_level(/datum/skill/craft/sewing), target = I))
+		if(do_after(user, 3 SECONDS, target = I))
 			var/refill_amount
 			refill_amount = min(5, (maxstring - stringamt))
 			stringamt += refill_amount
@@ -152,6 +152,7 @@
 				return
 			else
 				playsound(loc, 'sound/foley/sewflesh.ogg', 50, TRUE, -2)
+				use(1)
 				user.visible_message(span_info("[user] repairs [I]!"))
 				if(I.body_parts_covered != I.body_parts_covered_dynamic)
 					user.visible_message(span_info("[user] repairs [I]'s coverage!"))
@@ -229,6 +230,7 @@
 			else
 				patient.visible_message(span_smallgreen("One last drop of blood trickles from the [(target_wound?.name)] on [patient]'s [affecting.name] before it closes."), span_smallgreen("The throbbing warmth coming out of [target_wound] soothes and stops. It no longer bleeds."))
 			informed = TRUE
+			use(1)
 		if(istype(target_wound, /datum/wound/dynamic))
 			var/datum/wound/dynamic/dynwound = target_wound
 			if(dynwound.is_maxed)
@@ -239,7 +241,6 @@
 			continue
 		if(doctor.mind)
 			doctor.mind.add_sleep_experience(/datum/skill/misc/medicine, doctor.STAINT * 2.5)
-		use(1)
 		target_wound.sew_wound()
 		if(patient == doctor)
 			if(is_simple_animal)
