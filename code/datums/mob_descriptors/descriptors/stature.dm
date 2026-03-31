@@ -172,6 +172,15 @@
 /datum/mob_descriptor/stature/critter
 	name = "Critter"
 
+/datum/mob_descriptor/stature/chud
+	name = "Chud"
+
+/datum/mob_descriptor/stature/foid
+	name = "Foid"
+
+/datum/mob_descriptor/stature/moid
+	name = "Moid"
+
 // this one technically already exists but it was a very specific selection choice & i've got a request to add it
 /datum/mob_descriptor/stature/creacher
 	name = "Creacher"
