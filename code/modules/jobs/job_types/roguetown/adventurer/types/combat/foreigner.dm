@@ -135,7 +135,7 @@
 	subclass_languages = list(/datum/language/otavan)
 	cmode_music = 'sound/music/cmode/adventurer/combat_outlander2.ogg'
 	category_tags = list(CTAG_ADVENTURER, CTAG_COURTAGENT)
-	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_NOPAINSTUN)
+	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_NOPAIN)
 	subclass_stats = list(
 		STATKEY_CON = 3,
 		STATKEY_SPD = -1,
@@ -569,7 +569,7 @@
 				wrists = /obj/item/clothing/wrists/roguetown/bracers/bronze
 				belt = /obj/item/storage/belt/rogue/leather
 			if("Gladiator - Skin-Armored & Immunity To Pain")
-				ADD_TRAIT(H, TRAIT_NOPAINSTUN, TRAIT_GENERIC) //Lite!Barbarian.
+				ADD_TRAIT(H, TRAIT_NOPAIN, TRAIT_GENERIC) //Lite!Barbarian.
 				head = /obj/item/clothing/head/roguetown/helmet/bronzegladiator
 				wrists = /obj/item/clothing/wrists/roguetown/bracers/cloth/gladiator
 				armor = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple/gladiator

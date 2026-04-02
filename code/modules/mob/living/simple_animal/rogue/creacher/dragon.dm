@@ -101,7 +101,7 @@
 
 	ai_controller.set_blackboard_key(BB_TARGETED_ACTION, leap)
 
-	//ADD_TRAIT(src, TRAIT_NOPAINSTUN, TRAIT_GENERIC) // Need a weakness
+	//ADD_TRAIT(src, TRAIT_NOPAIN, TRAIT_GENERIC) // Need a weakness
 
 /mob/living/simple_animal/hostile/retaliate/rogue/dragon/death(gibbed)
 	..()

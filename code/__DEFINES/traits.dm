@@ -226,7 +226,6 @@
 #define TRAIT_HARDDISMEMBER	"Hard Dismemberment"
 #define TRAIT_EASYDECAPITATION "Easy Decapitation"
 #define TRAIT_NOPAIN	"Painless"
-#define TRAIT_NOPAINSTUN	"Enduring"
 #define TRAIT_NOBREATH	"Breathless"
 #define TRAIT_DEATHLESS "Deathless"
 #define TRAIT_TOXIMMUNE	"Poison Immune"
@@ -326,7 +325,6 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_VAMPBITE = span_info("Victims of your bite will feel immense pleasure."),
 	TRAIT_STRONGKICK = span_info("My kicks knock people down and back a step, consistently. There's no need for obstacles."),
 	TRAIT_IGNORESLOWDOWN = span_info("Nothing stops this carriage!"),
-	TRAIT_IGNOREDAMAGESLOWDOWN = span_info("Hits slow me down no longer."),
 	TRAIT_NOBLE = span_blue("I'm of noble blood."),
 	TRAIT_PACIFISM = span_info("I cannot harm another living being."),
 	TRAIT_DEFILED_NOBLE = span_blue("I'm of noble blood but... Something feels off!"),
@@ -438,8 +436,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_DEADITE = span_info("I am a feral deadite."),
 	TRAIT_EASYDISMEMBER = span_info("My limbs are frail and fragile. They can be dismembered with greater ease, including my neck."),
 	TRAIT_HARDDISMEMBER = span_info("My body is strong and endurant. My limbs are not easily dismembered."),
-	TRAIT_NOPAIN = span_info("I feel no pain. I can endure more burns before collapsing."),
-	TRAIT_NOPAINSTUN = span_info("Pain does not impair me. I can endure more burns before collapsing."),
+	TRAIT_NOPAIN = span_info("I feel no pain. Pain cannot slow or stun me from direct hits, and my injuries no longer drag down my movement. I can endure more burns before collapsing."),
 	TRAIT_NOBREATH = span_info("I do not breathe."),
 	TRAIT_DEATHLESS = span_info("Even without my lyfesblood, I will not be taken by Necra so easily."),
 	TRAIT_TOXIMMUNE = span_info("Poisons do nothing to me."),
@@ -628,7 +625,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_CONFESSED "confessed" // Used in Indexer-mailing to prevent false-flags. God, this is snowflakey.
 #define TRAIT_BAGGED "bagged" // Black-bagged. More snowflaking.
 #define TRAIT_IGNORESLOWDOWN	"Ignore Slow"
-#define TRAIT_IGNOREDAMAGESLOWDOWN "Ignore Damage Slowdown"
 #define TRAIT_RIGIDMOVEMENT		"Ignore Natural Health Slowdown"
 #define TRAIT_DEATHCOMA			"Death Coma" //Causes death-like unconsciousness
 #define TRAIT_FAKEDEATH			"Fake Death" //Makes the owner appear as dead to most forms of medical examination

@@ -100,7 +100,7 @@
 /mob/living/carbon/spirit/updatehealth()
 	. = ..()
 	var/slow = 0
-	if(!HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))
+	if(!HAS_TRAIT(src, TRAIT_NOPAIN))
 		var/health_deficiency = (maxHealth - health)
 		if(health_deficiency >= 45)
 			slow += (health_deficiency / 25)

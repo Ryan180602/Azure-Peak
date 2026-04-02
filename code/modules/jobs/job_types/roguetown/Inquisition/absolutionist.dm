@@ -19,7 +19,7 @@
 	give_bank_account = 15
 
 	job_traits = list(
-		TRAIT_NOPAINSTUN,
+		TRAIT_NOPAIN,
 		TRAIT_PACIFISM,
 		TRAIT_EMPATH,
 		TRAIT_CRITICAL_RESISTANCE,

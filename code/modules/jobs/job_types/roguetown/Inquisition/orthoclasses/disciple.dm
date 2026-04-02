@@ -48,7 +48,7 @@
 			if("Discipline - Unarmed")
 				H.adjust_skillrank_up_to(/datum/skill/misc/athletics, SKILL_LEVEL_MASTER, TRUE)
 				gloves = /obj/item/clothing/gloves/roguetown/bandages/pugilist
-				ADD_TRAIT(H, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_GENERIC)
+				ADD_TRAIT(H, TRAIT_NOPAIN, TRAIT_GENERIC)
 			if("Katar")
 				r_hand = /obj/item/rogueweapon/katar/psydon
 				gloves = /obj/item/clothing/gloves/roguetown/bandages/weighted

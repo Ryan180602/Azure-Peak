@@ -76,7 +76,7 @@
 					emote("painmoan")
 			else
 				if(painpercent >= 100)
-					if(prob(25) && (HAS_TRAIT(src, TRAIT_PSYDONIAN_GRIT) || STAWIL >= 15) && !HAS_TRAIT(src, TRAIT_NOPAINSTUN)) // PSYDONIC WEIGHTED COINFLIP. TWEAK THIS AS THOU WILT. DON'T LET THEM BE BROKEN, PSYDON WILLING. THROW CON-MAXXERS A BONE, TOO.
+					if(prob(25) && (HAS_TRAIT(src, TRAIT_PSYDONIAN_GRIT) || STAWIL >= 15) && !HAS_TRAIT(src, TRAIT_NOPAIN)) // PSYDONIC WEIGHTED COINFLIP. TWEAK THIS AS THOU WILT. DON'T LET THEM BE BROKEN, PSYDON WILLING. THROW CON-MAXXERS A BONE, TOO.
 						Immobilize(15) // EAT A MICROSTUN. YOU'RE AVOIDING A PAINCRIT.
 						if(HAS_TRAIT(src, TRAIT_PSYDONIAN_GRIT))
 							visible_message(span_info("[src] audibly grits their teeth. ENDURING through their pain."), span_info("Through my faith in HIM, I ENDURE."))
@@ -85,7 +85,7 @@
 						stuttering += 5
 						emote("painmoan")
 						return
-					if(prob(probby) && !HAS_TRAIT(src, TRAIT_NOPAINSTUN) && !has_status_effect(/datum/status_effect/buff/psyhealing))
+					if(prob(probby) && !HAS_TRAIT(src, TRAIT_NOPAIN) && !has_status_effect(/datum/status_effect/buff/psyhealing))
 						Immobilize(10)
 						emote("painscream")
 						stuttering += 5

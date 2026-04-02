@@ -86,7 +86,7 @@
 	outfit = /datum/outfit/job/roguetown/mercenary/atgervishaman
 	subclass_languages = list(/datum/language/gronnic)
 	cmode_music = 'sound/music/combat_shaman2.ogg'
-	traits_applied = list(TRAIT_STRONGBITE, TRAIT_CIVILIZEDBARBARIAN, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_NOPAINSTUN, TRAIT_BLOOD_RESISTANCE)
+	traits_applied = list(TRAIT_STRONGBITE, TRAIT_CIVILIZEDBARBARIAN, TRAIT_NOPAIN, TRAIT_BLOOD_RESISTANCE)
 	subclass_stats = list(
 		STATKEY_STR = 3,
 		STATKEY_CON = 2,

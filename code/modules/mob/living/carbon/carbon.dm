@@ -760,7 +760,7 @@
 		var/burn_threshold = C ? C.max_damage : FIRE_HARDCRIT_BASE
 		if(!mind && !HAS_TRAIT(src, TRAIT_CRIT_THRESHOLD))
 			burn_threshold *= FIRE_HARDCRIT_MINDLESS_MULT
-		else if(HAS_TRAIT(src, TRAIT_NOPAIN) || HAS_TRAIT(src, TRAIT_NOPAINSTUN))
+		else if(HAS_TRAIT(src, TRAIT_NOPAIN))
 			burn_threshold *= FIRE_HARDCRIT_NOPAIN_MULT
 		var/burn_ratio = total_burn / burn_threshold
 		if(!burn_warning_shown)

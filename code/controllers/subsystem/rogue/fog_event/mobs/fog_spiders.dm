@@ -31,7 +31,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/revenant/mirespider/Initialize()
 	. = ..()
-	ADD_TRAIT(src, TRAIT_NOPAINSTUN, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOPAIN, TRAIT_GENERIC)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/revenant/mirespider_lurker
 	name = "mire lurker revenant"
@@ -69,4 +69,4 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/revenant/mirespider_lurker/Initialize()
 	. = ..()
-	ADD_TRAIT(src, TRAIT_NOPAINSTUN, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOPAIN, TRAIT_GENERIC)

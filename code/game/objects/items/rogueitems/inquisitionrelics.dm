@@ -608,7 +608,7 @@ Inquisitorial armory down here
 				M.flash_fullscreen("redflash3")
 			subject = M
 			hasSubject = TRUE
-			if(!HAS_TRAIT(M, TRAIT_NOPAIN) || !HAS_TRAIT(M, TRAIT_NOPAINSTUN))
+			if(!HAS_TRAIT(M, TRAIT_NOPAIN))
 				if(prob(15))
 					M.emote("whimper", forced = TRUE)
 				else if(prob(15))

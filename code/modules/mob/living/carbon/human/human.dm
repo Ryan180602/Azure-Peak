@@ -936,7 +936,7 @@
 /mob/living/carbon/human/updatehealth()
 	. = ..()
 	dna?.species.spec_updatehealth(src)
-	if(HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))
+	if(HAS_TRAIT(src, TRAIT_NOPAIN))
 		remove_movespeed_modifier(MOVESPEED_ID_DAMAGE_SLOWDOWN)
 		remove_movespeed_modifier(MOVESPEED_ID_DAMAGE_SLOWDOWN_FLYING)
 		return

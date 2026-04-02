@@ -165,7 +165,7 @@
 	desc = "I was once afflicted with the accursed rot, and was cured. It has left me changed: my limbs are weaker, but I feel no pain and have no need to breathe..."
 	custom_text = "Unlocks the 'Rotten' option in skin tone selection, if applicable."
 	// below is functionally equivalent to dying and being resurrected via astrata T4 - yep, this is what it gives you.
-	added_traits = list(TRAIT_EASYDISMEMBER, TRAIT_NOPAIN, TRAIT_NOPAINSTUN, TRAIT_NOBREATH, TRAIT_DEATHLESS, TRAIT_TOXIMMUNE, TRAIT_ZOMBIE_IMMUNE, TRAIT_ROTMAN, TRAIT_SILVER_WEAK)
+	added_traits = list(TRAIT_EASYDISMEMBER, TRAIT_NOPAIN, TRAIT_NOBREATH, TRAIT_DEATHLESS, TRAIT_TOXIMMUNE, TRAIT_ZOMBIE_IMMUNE, TRAIT_ROTMAN, TRAIT_SILVER_WEAK)
 
 /datum/virtue/combat/pallid
 	name = "Pallid"

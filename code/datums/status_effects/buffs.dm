@@ -116,7 +116,7 @@
 /datum/status_effect/blooddrunk/on_apply()
 	. = ..()
 	if(.)
-		ADD_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, "blooddrunk")
+		ADD_TRAIT(owner, TRAIT_NOPAIN, "blooddrunk")
 		owner.maxHealth *= 10
 		owner.bruteloss *= 10
 		owner.fireloss *= 10
@@ -217,7 +217,7 @@
 	owner.staminaloss *= 0.1
 	owner.updatehealth()
 	owner.log_message("lost blood-drunk stun immunity", LOG_ATTACK)
-	REMOVE_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, "blooddrunk");
+	REMOVE_TRAIT(owner, TRAIT_NOPAIN, "blooddrunk");
 	if(islist(owner.stun_absorption) && owner.stun_absorption["blooddrunk"])
 		owner.stun_absorption -= "blooddrunk"
 
@@ -313,7 +313,7 @@
 	alert_type = /atom/movable/screen/alert/status_effect/regenerative_core
 
 /datum/status_effect/regenerative_core/on_apply()
-	ADD_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, id)
+	ADD_TRAIT(owner, TRAIT_NOPAIN, id)
 	owner.adjustBruteLoss(-25)
 	owner.adjustFireLoss(-25)
 	owner.remove_CC()
@@ -321,7 +321,7 @@
 	return TRUE
 
 /datum/status_effect/regenerative_core/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_IGNOREDAMAGESLOWDOWN, id)
+	REMOVE_TRAIT(owner, TRAIT_NOPAIN, id)
 
 /datum/status_effect/antimagic
 	id = "antimagic"

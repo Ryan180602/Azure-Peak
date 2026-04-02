@@ -47,7 +47,7 @@
 		TRAIT_PIERCEIMMUNE, //Prevents weapon dusting and caltrop effects due to them transforming when killed/stepping on shards.
 		TRAIT_LONGSTRIDER,
 		TRAIT_PERFECT_TRACKER,
-		TRAIT_NOPAINSTUN, //This bad boy ENDVRES
+		TRAIT_NOPAIN, //This bad boy ENDVRES
 		TRAIT_BIGGUY,
 	)
 	inherent_biotypes = MOB_HUMANOID
