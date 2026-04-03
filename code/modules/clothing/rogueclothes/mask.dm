@@ -235,21 +235,14 @@
 	icon_state = "confessormask"
 	max_integrity = 200
 	equip_sound = 'sound/items/confessormaskon.ogg'
+	drop_sound = 'sound/items/confessormaskoff.ogg'
 	smeltresult = /obj/item/ingot/steel
-	var/worn = FALSE
 	slot_flags = ITEM_SLOT_MASK
 	stack_fovs = FALSE
 
-/obj/item/clothing/mask/rogue/facemask/steel/confessor/equipped(mob/living/carbon/human/user, slot)
+/obj/item/clothing/mask/rogue/facemask/steel/confessor/ComponentInitialize()
 	. = ..()
-	if(user.wear_mask == src)
-		worn = TRUE
-
-/obj/item/clothing/mask/rogue/facemask/steel/confessor/dropped(mob/user)
-	. = ..()
-	if(worn)
-		playsound(user, 'sound/items/confessormaskoff.ogg', 80)
-		worn = FALSE
+	AddComponent(/datum/component/armour_filtering/positive, TRAIT_PSYDONITE, "confessor_mask")
 
 /obj/item/clothing/mask/rogue/facemask/steel/confessor/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -273,12 +266,9 @@
 	icon_state = "confessormask_lens"
 	var/lensmoved = TRUE
 
-/obj/item/clothing/mask/rogue/facemask/steel/confessor/lensed/equipped(mob/user, slot)
-	..()
-	if(slot == SLOT_WEAR_MASK || slot == SLOT_HEAD)
-		if(!lensmoved)
-			ADD_TRAIT(user, TRAIT_NOCSHADES, "redlens")
-			return
+/obj/item/clothing/mask/rogue/facemask/steel/confessor/lensed/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/armour_filtering/positive, TRAIT_PSYDONITE, "confessor_mask")
 
 /obj/item/clothing/mask/rogue/facemask/steel/confessor/lensed/attack_right(mob/user, slot)
 	..()
@@ -290,13 +280,6 @@
 	to_chat(user, span_info("You discreetly slide the inner lenses back into place."))
 	ADD_TRAIT(user, TRAIT_NOCSHADES, "redlens")
 	lensmoved = FALSE
-
-/obj/item/clothing/mask/rogue/facemask/steel/confessor/lensed/dropped(mob/user, slot)
-	..()
-	if(slot != SLOT_WEAR_MASK || slot == SLOT_HEAD)
-		if(!lensmoved)
-			REMOVE_TRAIT(user, TRAIT_NOCSHADES, "redlens")
-			return
 
 /obj/item/clothing/mask/rogue/wildguard
 	name = "wild guard"
