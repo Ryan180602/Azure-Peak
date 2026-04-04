@@ -78,24 +78,10 @@
 	if(loc == user)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
-			if(toggle_icon_state)
-				icon_state = "fullpadded_down"
-			flags_inv = HIDEEARS|HIDEHAIR
-			body_parts_covered = NECK|HAIR|EARS|HEAD
-			if(ishuman(user))
-				var/mob/living/carbon/H = user
-				H.update_inv_neck()
-				H.update_inv_head()
+			apply_adjustable_state(NECK|HAIR|EARS|HEAD, HIDEEARS|HIDEHAIR, initial(flags_cover), initial(block2add), toggle_icon_state ? "fullpadded_down" : initial(icon_state))
 		else if(adjustable == CADJUSTED)
 			adjustable = CADJUSTED_MORE
-			if(toggle_icon_state)
-				icon_state = "fullpadded_neck"
-			flags_inv = null
-			body_parts_covered = NECK
-			if(ishuman(user))
-				var/mob/living/carbon/H = user
-				H.update_inv_neck()
-				H.update_inv_head()
+			apply_adjustable_state(NECK, null, initial(flags_cover), initial(block2add), toggle_icon_state ? "fullpadded_neck" : initial(icon_state))
 		else if(adjustable == CADJUSTED_MORE)
 			ResetAdjust(user)
 		if(ishuman(user))
@@ -207,24 +193,10 @@
 	if(loc == user)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
-			if(toggle_icon_state)
-				icon_state = "chaincoif"
-			flags_inv = HIDEEARS|HIDEHAIR
-			body_parts_covered = NECK|HAIR|EARS|HEAD
-			if(ishuman(user))
-				var/mob/living/carbon/H = user
-				H.update_inv_neck()
-				H.update_inv_head()
+			apply_adjustable_state(NECK|HAIR|EARS|HEAD, HIDEEARS|HIDEHAIR, initial(flags_cover), initial(block2add), toggle_icon_state ? "chaincoif" : initial(icon_state))
 		else if(adjustable == CADJUSTED)
 			adjustable = CADJUSTED_MORE
-			if(toggle_icon_state)
-				icon_state = "chaincoif_t"
-			flags_inv = null
-			body_parts_covered = NECK
-			if(ishuman(user))
-				var/mob/living/carbon/H = user
-				H.update_inv_neck()
-				H.update_inv_head()
+			apply_adjustable_state(NECK, null, initial(flags_cover), initial(block2add), toggle_icon_state ? "chaincoif_t" : initial(icon_state))
 		else if(adjustable == CADJUSTED_MORE)
 			ResetAdjust(user)
 		if(ishuman(user))

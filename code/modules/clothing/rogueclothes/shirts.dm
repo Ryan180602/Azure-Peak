@@ -758,15 +758,13 @@
 	switch(open_wear)
 		if(FALSE)
 			name = "open servant dress"
-			body_parts_covered = null
 			open_wear = TRUE
-			flags_inv = HIDEBOOB
+			apply_adjustable_state(null, HIDEBOOB, initial(flags_cover), initial(block2add), initial(icon_state))
 			to_chat(usr, span_warning("Now wearing radically!"))
 		if(TRUE)
 			name = "servant dress"
-			body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 			open_wear = FALSE
-			flags_inv = HIDEBOOB|HIDECROTCH
+			apply_adjustable_state(CHEST|GROIN|ARMS|LEGS|VITALS, HIDEBOOB|HIDECROTCH, initial(flags_cover), initial(block2add), initial(icon_state))
 			to_chat(usr, span_warning("Now wearing normally!"))
 	update_icon()
 	if(user)

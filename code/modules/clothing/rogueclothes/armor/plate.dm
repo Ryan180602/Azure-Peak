@@ -513,9 +513,7 @@
 		playsound(user, "sound/foley/dropsound/cloth_drop.ogg", 100, TRUE, -1)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
-			icon_state = "fancyhalfplate"
-			body_parts_covered = CHEST|GROIN|VITALS
-			flags_cover = null
+			apply_adjustable_state(CHEST|GROIN|VITALS, initial(flags_inv), null, null, "fancyhalfplate")
 			emote_environment = 0
 			swapped_color = detail_color
 			detail_color = "#ffffff"
@@ -523,7 +521,6 @@
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
 				H.update_inv_armor()
-			block2add = null
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
 			detail_color = swapped_color

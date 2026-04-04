@@ -26,8 +26,7 @@
 	if(loc == user)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
-			icon_state = "[initial(icon_state)]_t"
-			body_parts_covered = null
+			apply_adjustable_state(null, flags_inv, flags_cover, block2add, "[initial(icon_state)]_t")
 			slowdown += 2
 			if(ishuman(user))
 				var/mob/living/carbon/H = user

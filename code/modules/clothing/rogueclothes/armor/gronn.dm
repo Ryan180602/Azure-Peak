@@ -167,12 +167,9 @@
 			playsound(src, 'sound/foley/equip/rummaging-03.ogg', 50, TRUE)
 			if(on)
 				toggle_helmet_light(user)
-			if(toggle_icon_state)
-				icon_state = "gronnfurhood_down"
-				item_state = "gronnfurhood_down"
 			adjustable = CADJUSTED
-			flags_inv = null
-			body_parts_covered = null
+			apply_adjustable_state(null, null, initial(flags_cover), initial(block2add), toggle_icon_state ? "gronnfurhood_down" : initial(icon_state))
+			item_state = "gronnfurhood_down"
 		else if(adjustable == CADJUSTED)
 			playsound(src, 'sound/foley/equip/cloak (3).ogg', 50, TRUE)
 			ResetAdjust(user)

@@ -17,13 +17,12 @@
 	return //override this in the clothing item itself so we can update the right inv
 
 /obj/item/clothing/proc/ResetAdjust(mob/user)
+	var/base_coverage = initial(body_parts_covered)
 	adjustable = initial(adjustable)
-	icon_state = "[initial(icon_state)]"
 	slowdown = initial(slowdown)
-	body_parts_covered = initial(body_parts_covered)
-	flags_inv = initial(flags_inv)
-	flags_cover = initial(flags_cover)
-	block2add = initial(block2add)
+	body_parts_covered = base_coverage
+	apply_adjustable_state(base_coverage, initial(flags_inv), initial(flags_cover), initial(block2add), "[initial(icon_state)]")
+	item_state = initial(item_state)
 
 /obj/item/clothing/equipped(mob/user, slot)
 	..()

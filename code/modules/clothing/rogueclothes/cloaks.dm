@@ -197,19 +197,15 @@
 		if(FALSE)
 			name = "opened psydonian tabard"
 			desc = "A tabard worn by Psydon's disciples, peeled back to reveal its enduring innards."
-			body_parts_covered = GROIN
-			icon_state = "psydontabardalt"
 			item_state = "psydontabardalt"
 			open_wear = TRUE
-			flags_inv = HIDECROTCH // BARE YOUR CHEST, NOT YOUR WEEN!
+			apply_adjustable_state(GROIN, HIDECROTCH, initial(flags_cover), initial(block2add), "psydontabardalt") // BARE YOUR CHEST, NOT YOUR WEEN!
 			to_chat(usr, span_warning("ENDURING, like the MARTYRS who'll guide the faithful-and-pious to PARADISE."))
 		if(TRUE)
 			name = "psydonian tabard"
 			desc = "A tabard worn by Psydon's disciples. Delicate stitchwork professes the psycross with pride."
-			body_parts_covered = CHEST|GROIN
-			icon_state = "psydontabard"
 			item_state = "psydontabard"
-			flags_inv = HIDECROTCH|HIDEBOOB
+			apply_adjustable_state(CHEST|GROIN, HIDECROTCH|HIDEBOOB, initial(flags_cover), initial(block2add), "psydontabard")
 			open_wear = FALSE
 			to_chat(usr, span_warning("VEILED, like the CORPSES who've been shepherded by your steel to the AFTERLYFE."))
 	update_icon()

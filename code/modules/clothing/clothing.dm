@@ -52,6 +52,8 @@
 	var/list/allowed_race = CLOTHED_RACES_TYPES
 	var/immune_to_genderswap = FALSE
 	var/armor_class = ARMOR_CLASS_NONE
+	var/adjustable_coverage_reference = null
+	var/adjustable_missing_coverage = null
 
 	sellprice = 1
 	var/naledicolor = FALSE
@@ -110,6 +112,26 @@
 	if(!nodismemsleeves && (r_sleeve_status != SLEEVE_NOMOD || l_sleeve_status != SLEEVE_NOMOD))
 		. += span_info("Shift-right-click while targeting a sleeve to tear it off for an emergency bandage. Alt-shift-right-click to roll a sleeve up or down.")
 		. += span_info("Tearing success scales with Strength.")
+
+/obj/item/clothing/proc/get_adjustable_missing_coverage()
+	if(body_parts_covered_dynamic == body_parts_covered)
+		adjustable_missing_coverage = null
+	if(isnull(adjustable_coverage_reference))
+		adjustable_coverage_reference = body_parts_covered
+	adjustable_missing_coverage |= adjustable_coverage_reference & ~body_parts_covered_dynamic
+	return adjustable_missing_coverage
+
+/obj/item/clothing/proc/apply_adjustable_state(target_coverage, target_flags_inv, target_flags_cover, target_block2add, target_icon_state = null)
+	var/missing_coverage = get_adjustable_missing_coverage()
+	var/next_coverage = isnull(target_coverage) ? 0 : target_coverage
+	adjustable_coverage_reference = next_coverage
+	body_parts_covered_dynamic = next_coverage
+	body_parts_covered_dynamic &= ~missing_coverage
+	flags_inv = target_flags_inv
+	flags_cover = target_flags_cover
+	block2add = target_block2add
+	if(!isnull(target_icon_state))
+		icon_state = target_icon_state
 
 /obj/item/clothing/ShiftRightClick(mob/user, params)
 	. = TRUE

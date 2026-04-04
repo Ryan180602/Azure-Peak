@@ -53,17 +53,13 @@
 /obj/item/clothing/head/roguetown/helmet/leather/chapeau/attack_right(mob/user)
 	switch(open_wear)
 		if(FALSE)
-			icon_state = "chapnaledalt"
 			item_state = "chapnaledalt"
 			open_wear = TRUE
-			flags_inv = HIDESNOUT|HIDEHAIR
-			body_parts_covered_dynamic = HEAD|HAIR|FACE
+			apply_adjustable_state(HEAD|HAIR|FACE, HIDESNOUT|HIDEHAIR, initial(flags_cover), initial(block2add), "chapnaledalt")
 		if(TRUE)
-			icon_state = "chapnaled"
 			item_state = "chapnaled"
 			open_wear = FALSE
-			flags_inv = HIDEHAIR
-			body_parts_covered_dynamic = HEAD|HAIR|EARS
+			apply_adjustable_state(HEAD|HAIR|EARS, HIDEHAIR, initial(flags_cover), initial(block2add), "chapnaled")
 	update_icon()
 	if(user)
 		if(ishuman(user))

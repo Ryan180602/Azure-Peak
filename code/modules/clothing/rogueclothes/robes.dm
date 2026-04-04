@@ -309,20 +309,16 @@
 		if(FALSE)
 			name = "open eoran robe"
 			desc = "Used by more radical followers of the Eoran Church"
-			body_parts_covered = null
-			icon_state = "eorastraps"
 			item_state = "eorastraps"
 			fanatic_wear = TRUE
-			flags_inv = HIDECROTCH
+			apply_adjustable_state(null, HIDECROTCH, initial(flags_cover), initial(block2add), "eorastraps")
 			to_chat(usr, span_warning("Now wearing radically!"))
 		if(TRUE)
 			name = "eoran robe"
 			desc = "Holy robes, intended for use by followers of Eora"
-			body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
-			icon_state = "eorarobes"
 			item_state = "eorarobes"
 			fanatic_wear = FALSE
-			flags_inv = HIDEBOOB|HIDECROTCH
+			apply_adjustable_state(CHEST|GROIN|ARMS|LEGS|VITALS, HIDEBOOB|HIDECROTCH, initial(flags_cover), initial(block2add), "eorarobes")
 			to_chat(usr, span_warning("Now wearing normally!"))
 	update_icon()
 	if(user)

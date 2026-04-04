@@ -52,24 +52,22 @@
 		return
 	mask_adjusted = !mask_adjusted
 	if(!mask_adjusted)
-		src.icon_state = initial(icon_state)
+		apply_adjustable_state(initial(body_parts_covered), initial(flags_inv), initial(flags_cover), initial(block2add), initial(icon_state))
 		gas_transfer_coefficient = initial(gas_transfer_coefficient)
 		permeability_coefficient = initial(permeability_coefficient)
-		clothing_flags |= visor_flags
-		flags_inv |= visor_flags_inv
-		flags_cover |= visor_flags_cover
+		clothing_flags = initial(clothing_flags)
 		to_chat(user, span_notice("I push \the [src] back into place."))
 		slot_flags = initial(slot_flags)
 	else
-		icon_state += "_up"
+		apply_adjustable_state(null, (initial(flags_inv) & ~visor_flags_inv), (initial(flags_cover) & ~visor_flags_cover), initial(block2add), "[initial(icon_state)]_up")
 		to_chat(user, span_notice("I push \the [src] out of the way."))
 		gas_transfer_coefficient = null
 		permeability_coefficient = null
-		clothing_flags &= ~visor_flags
-		flags_inv &= ~visor_flags_inv
-		flags_cover &= ~visor_flags_cover
+		clothing_flags = initial(clothing_flags) & ~visor_flags
 		if(adjusted_flags)
 			slot_flags = adjusted_flags
+		else
+			slot_flags = initial(slot_flags)
 	if(user)
 		user.wear_mask_update(src, toggle_off = mask_adjusted)
 		user.update_mob_action_buttons() //when mask is adjusted out, we update all buttons icon so the user's potential internal tank correctly shows as off.
