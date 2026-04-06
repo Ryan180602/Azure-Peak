@@ -1037,16 +1037,30 @@
 
 //
 
-/obj/item/clothing/neck/roguetown/bevor/zizo
+/obj/item/clothing/neck/roguetown/bevor/avantyne
 	name = "avantyne bevor"
-	desc = "The edge of reality, though unknown to many, favors Her acolytes above all else. This avantyne neckguard wards off the unenlightened's flailing."
+	desc = "An avantyne neckguard cut for the medium rite, still protective without becoming impossible to remove."
 	color = "#c1b18d"
 	chunkcolor = "#363030"
 	material_category = ARMOR_MAT_PLATE
+	armor_class = ARMOR_CLASS_MEDIUM
 
-/obj/item/clothing/neck/roguetown/bevor/zizo/Initialize()
+/obj/item/clothing/neck/roguetown/bevor/avantyne/Initialize()
 	. = ..()
 	AddComponent(/datum/component/cursed_item, TRAIT_CABAL, "ARMOR")
+
+/obj/item/clothing/neck/roguetown/bevor/avantyne/heavy
+	name = "fused avantyne bevor"
+
+/obj/item/clothing/neck/roguetown/bevor/avantyne/heavy/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/neck/roguetown/bevor/avantyne/heavy/dropped(mob/living/carbon/human/user)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
 
 //
 
