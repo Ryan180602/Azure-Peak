@@ -220,7 +220,7 @@ window "statwindow"
 		tab-text-color = #d6dbd5
 		tab-background-color = #000000
 		tab-font-family = "Blackmoor LET"
-		tab-font-size = 20
+		tab-font-size = 15
 		prefix-color = #f9bb00
 		suffix-color = #d6dbd5
 
