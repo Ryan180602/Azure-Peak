@@ -43,6 +43,7 @@ Sunlight System
 
 	var/mutable_appearance/sunlight_overlay
 	var/list/datum/lighting_corner/affecting_corners
+	var/tmp/sunlight_queued = FALSE
 
 /atom/movable/outdoor_effect/Destroy(force)
 	if (!force)
@@ -70,16 +71,29 @@ Sunlight System
 
 
 /atom/movable/outdoor_effect/proc/disable_sunlight()
-	var/turf/T = list()
+	var/list/update_turfs = list()
 	for(var/datum/lighting_corner/C in affecting_corners)
 		LAZYREMOVE(C.globAffect, src)
 		C.get_sunlight_falloff()
-		T |= C.masters
-	T |= source_turf /* get our calculated indoor lighting */
-	GLOB.SUNLIGHT_QUEUE_CORNER += T
+		update_turfs |= C.masters
+	update_turfs |= source_turf /* get our calculated indoor lighting */
+	queue_sunlight_corners(update_turfs)
 
 	//Empty our affecting_corners list
 	affecting_corners = null
+
+/atom/movable/outdoor_effect/proc/queue_sunlight_update()
+	if(sunlight_queued)
+		return
+	sunlight_queued = TRUE
+	GLOB.SUNLIGHT_QUEUE_UPDATE += src
+
+/atom/movable/outdoor_effect/proc/queue_sunlight_corners(list/update_turfs)
+	for(var/turf/T as anything in update_turfs)
+		if(!T || (T.turf_flags & TURF_SUNLIGHT_QUEUED))
+			continue
+		T.turf_flags |= TURF_SUNLIGHT_QUEUED
+		GLOB.SUNLIGHT_QUEUE_CORNER += T
 
 /atom/movable/outdoor_effect/proc/process_state()
 	switch(state)
@@ -95,7 +109,6 @@ Sunlight System
 
 /atom/movable/outdoor_effect/proc/calc_sunlight_spread()
 
-	var/list/turf/turfs                    = list()
 	var/datum/lighting_corner/C
 	var/turf/T
 	var/list/tempMasterList = list() /* to mimimize double ups */
@@ -110,8 +123,9 @@ Sunlight System
 			continue
 		if (!T.lighting_corners_initialised)
 			T.generate_missing_corners()
+		if(!length(T.corners))
+			continue
 		corners |= T.corners
-		turfs += T
 
 	//restore lum
 	luminosity = oldLum
@@ -136,7 +150,7 @@ Sunlight System
 		tempMasterList |= C.masters
 
 
-	GLOB.SUNLIGHT_QUEUE_CORNER += tempMasterList /* update the boys */
+	queue_sunlight_corners(tempMasterList) /* update the boys */
 
 /* Related object changes */
 /* I moved this here to consolidate sunlight changes as much as possible, so its easily disabled */
@@ -163,6 +177,12 @@ Sunlight System
 	for(S in globAffect)
 		sunFalloff = sunFalloff < globAffect[S] ? globAffect[S] : sunFalloff
 
+/turf/proc/queue_sunlight_work()
+	if(turf_flags & TURF_SUNLIGHT_WORK_QUEUED)
+		return
+	turf_flags |= TURF_SUNLIGHT_WORK_QUEUED
+	GLOB.SUNLIGHT_QUEUE_WORK += src
+
 /turf/proc/reassess_stack()
 	if(!SSlighting.initialized)
 		return
@@ -179,7 +199,8 @@ Sunlight System
 	for(var/datum/lighting_corner/corner in corners)
 		SunlightUpdates |= corner.masters
 
-	GLOB.SUNLIGHT_QUEUE_WORK += SunlightUpdates
+	for(var/turf/update_turf as anything in SunlightUpdates)
+		update_turf.queue_sunlight_work()
 
 	var/turf/T = GET_TURF_BELOW(src)
 	if(T)
@@ -187,8 +208,11 @@ Sunlight System
 
 /* check ourselves and neighbours to see what outdoor effects we need */
 /* turf won't initialize an outdoor_effect if sky_blocked*/
-/turf/proc/update_sky_and_weather_states()
+/turf/proc/update_sky_weather()
 	var/TempState
+	var/had_effect = !!outdoor_effect
+	var/old_state = outdoor_effect?.state
+	var/old_weatherproof = outdoor_effect?.weatherproof
 
 	var/sky_visible = is_sky_visible()
 	var/turf_weatherproof = is_weatherproof()
@@ -218,6 +242,10 @@ Sunlight System
 		else if(SSoutdoor_effects.turf_weather_affectable_z_levels[z]) // not weatherproof, enable weathering if allowed
 			turf_flags |= TURF_BEING_WEATHERED
 			SSParticleWeather.weathered_turfs += src
+
+		return !had_effect || old_state != TempState || old_weatherproof != turf_weatherproof || TempState == SKY_VISIBLE_BORDER
+
+	return FALSE
 
 /// Do this turf and all the turfs above it in the z-stack allow sunlight through?
 /turf/proc/is_sky_visible()

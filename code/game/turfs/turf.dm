@@ -414,8 +414,11 @@
 
 	// If an opaque movable atom moves around we need to potentially update visibility.
 	if (AM.opacity)
+		var/old_opaque = has_opaque_atom
+		opaque_count++
 		has_opaque_atom = TRUE // Make sure to do this before reconsider_lights(), incase we're on instant updates. Guaranteed to be on in this case.
-		reconsider_lights()
+		if(old_opaque != has_opaque_atom)
+			reconsider_lights()
 
 /turf/Exited(atom/movable/Obj, atom/newloc)
 	. = ..()
@@ -425,8 +428,11 @@
 		SEND_SIGNAL(Obj, COMSIG_MOVABLE_TURF_EXITED, src, newloc)
 
 	if (Obj && Obj.opacity)
-		recalc_atom_opacity() // Make sure to do this before reconsider_lights(), incase we're on instant updates.
-		reconsider_lights()
+		var/old_opaque = has_opaque_atom
+		opaque_count = max(opaque_count - 1, 0)
+		has_opaque_atom = opacity || opaque_count > 0 // Make sure to do this before reconsider_lights(), incase we're on instant updates.
+		if(old_opaque != has_opaque_atom)
+			reconsider_lights()
 
 /turf/open/Entered(atom/movable/AM)
 	..()

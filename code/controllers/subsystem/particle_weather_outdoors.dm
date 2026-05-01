@@ -166,9 +166,10 @@ SUBSYSTEM_DEF(outdoor_effects)
 	for (i in 1 to GLOB.SUNLIGHT_QUEUE_WORK.len)
 		var/turf/T = GLOB.SUNLIGHT_QUEUE_WORK[i]
 		if(T)
-			T.update_sky_and_weather_states()
-			if(T.outdoor_effect)
-				GLOB.SUNLIGHT_QUEUE_UPDATE += T.outdoor_effect
+			T.turf_flags &= ~TURF_SUNLIGHT_WORK_QUEUED
+			var/needs_update = T.update_sky_weather()
+			if(needs_update && T.outdoor_effect)
+				T.outdoor_effect.queue_sunlight_update()
 
 		if(init_tick_checks)
 			CHECK_TICK
@@ -185,6 +186,7 @@ SUBSYSTEM_DEF(outdoor_effects)
 	for (i in 1 to GLOB.SUNLIGHT_QUEUE_UPDATE.len)
 		var/atom/movable/outdoor_effect/U = GLOB.SUNLIGHT_QUEUE_UPDATE[i]
 		if(U)
+			U.sunlight_queued = FALSE
 			U.process_state()
 			update_outdoor_effect_overlays(U)
 
@@ -208,12 +210,12 @@ SUBSYSTEM_DEF(outdoor_effects)
 		/* if we haven't initialized but we are affected, create new and check state */
 		if(!U)
 			T.outdoor_effect = new /atom/movable/outdoor_effect(T)
-			T.update_sky_and_weather_states()
+			T.update_sky_weather()
 			U = T.outdoor_effect
 
 			/* in case we aren't indoor somehow, wack us into the proc queue, we will be skipped on next indoor check */
 			if(U.state != SKY_BLOCKED)
-				GLOB.SUNLIGHT_QUEUE_UPDATE += T.outdoor_effect
+				U.queue_sunlight_update()
 
 		if(U.state != SKY_BLOCKED)
 			continue

@@ -4,10 +4,15 @@
 
 	var/tmp/lighting_corners_initialised = FALSE
 
-	var/tmp/list/datum/light_source/affecting_lights       // List of light sources affecting this turf.
-	var/tmp/atom/movable/lighting_object/lighting_object // Our lighting object.
+	/// List of light sources affecting this turf.
+	var/tmp/list/datum/light_source/affecting_lights
+	/// Our lighting object.
+	var/tmp/atom/movable/lighting_object/lighting_object
 	var/tmp/list/datum/lighting_corner/corners
-	var/tmp/has_opaque_atom = FALSE // Not to be confused with opacity, this will be TRUE if there's any opaque atom on the tile.
+	/// Not to be confused with opacity, this will be TRUE if there's any opaque atom on the tile.
+	var/tmp/has_opaque_atom = FALSE
+	/// Count of opaque movable atoms on the tile.
+	var/tmp/opaque_count = 0
 
 // Causes any affecting light sources to be queued for a visibility update, for example a door got opened.
 /turf/proc/reconsider_lights()
@@ -96,17 +101,16 @@
 
 // Can't think of a good name, this proc will recalculate the has_opaque_atom variable.
 /turf/proc/recalc_atom_opacity()
-	has_opaque_atom = opacity
-	if (!has_opaque_atom)
-		for (var/atom/A in src.contents) // Loop through every movable atom on our tile PLUS ourselves (we matter too...)
-			if (A.opacity)
-				has_opaque_atom = TRUE
-				break
+	opaque_count = 0
+	for(var/atom/movable/AM in contents)
+		if(AM.opacity)
+			opaque_count++
+	has_opaque_atom = opacity || opaque_count > 0
 
 /turf/proc/change_area(area/old_area, area/new_area)
-	GLOB.SUNLIGHT_QUEUE_WORK += src
+	queue_sunlight_work()
 	if(outdoor_effect)
-		GLOB.SUNLIGHT_QUEUE_UPDATE += outdoor_effect
+		outdoor_effect.queue_sunlight_update()
 	if(SSlighting.initialized)
 		if (new_area.dynamic_lighting != old_area.dynamic_lighting)
 			if (new_area.dynamic_lighting)

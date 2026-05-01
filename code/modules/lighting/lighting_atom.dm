@@ -113,9 +113,9 @@
 	var/turf/T = loc
 	. = ..()
 	if (opacity && istype(T))
-		var/old_has_opaque_atom = T.has_opaque_atom
+		var/old_opaque = T.has_opaque_atom
 		T.recalc_atom_opacity()
-		if (old_has_opaque_atom != T.has_opaque_atom)
+		if (old_opaque != T.has_opaque_atom)
 			T.reconsider_lights()
 
 // Should always be used to change the opacity of an atom.
@@ -130,12 +130,16 @@
 		return
 
 	if (new_opacity == TRUE)
+		var/old_opaque = T.has_opaque_atom
+		T.opaque_count++
 		T.has_opaque_atom = TRUE
-		T.reconsider_lights()
+		if(old_opaque != T.has_opaque_atom)
+			T.reconsider_lights()
 	else
-		var/old_has_opaque_atom = T.has_opaque_atom
-		T.recalc_atom_opacity()
-		if (old_has_opaque_atom != T.has_opaque_atom)
+		var/old_opaque = T.has_opaque_atom
+		T.opaque_count = max(T.opaque_count - 1, 0)
+		T.has_opaque_atom = T.opacity || T.opaque_count > 0
+		if (old_opaque != T.has_opaque_atom)
 			T.reconsider_lights()
 
 /atom/movable/Moved(atom/OldLoc, Dir)
