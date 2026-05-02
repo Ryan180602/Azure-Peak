@@ -1394,7 +1394,7 @@
 	name = "deep lunge"
 	icon_state = "inlunge"
 	damfactor = 1.3
-	penfactor = PEN_BSTEEL
+	penfactor = PEN_HEAVY
 
 	swingdelay_type = SWINGDELAY_CANCELSLOW
 	canparry = FALSE
