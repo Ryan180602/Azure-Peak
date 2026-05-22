@@ -130,7 +130,6 @@
 			update_inv_belt()
 		if(gloves)
 			gloves.add_blood_DNA(blood_dna)
-			update_inv_gloves()
 		if(shoes)
 			shoes.add_blood_DNA(blood_dna)
 			update_inv_shoes()
@@ -151,7 +150,6 @@
 		if(gloves)
 			var/obj/item/clothing/gloves/G = gloves
 			G.add_blood_DNA(blood_dna)
-			update_inv_gloves()
 		else if(length(blood_dna))
 			AddComponent(/datum/component/forensics, null, null, blood_dna)
 			bloody_hands = rand(2, 4)

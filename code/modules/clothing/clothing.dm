@@ -55,7 +55,11 @@
 	var/immune_to_genderswap = FALSE
 	var/armor_class = ARMOR_CLASS_NONE
 
+<<<<<<< HEAD
 	var/blood_color = null
+=======
+	sellprice = 1
+>>>>>>> 226d2221f6 (allah)
 	var/naledicolor = FALSE
 	var/chunkcolor = "#5e5e5e"
 	var/material_category = ARMOR_MAT_LEATHER
