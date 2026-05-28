@@ -2669,6 +2669,7 @@
 #include "code\modules\paperwork\papers\scrap.dm"
 #include "code\modules\photography\_pictures.dm"
 #include "code\modules\pixel_shift\pixel_shifting.dm"
+#include "code\modules\pointbuy\_pointbuy.dm"
 #include "code\modules\politics\_politics.dm"
 #include "code\modules\politics\decree.dm"
 #include "code\modules\politics\decree_api.dm"
