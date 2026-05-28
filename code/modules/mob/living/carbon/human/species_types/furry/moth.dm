@@ -9,7 +9,7 @@
 	origin = "The Seven Winds" // I am going to be doing a larger PR with the permission and use of Sarkness lore. Let us just please get this bug fixed.
 	base_name = "Beastvolk"
 	desc = "Many comparisons have been made to the common moths in an attempt to describe this unique species. From the appetite for clothing to the disconcertingly insectoid appearance, the name 'Moth' is forever stamped onto the common vocabulary. The comparison, however, falls short on the matter of flight.<br>\
-	<span style='color: #6a8cb7;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;'><b>+1 SPD</b></span><br>"
+"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS,HAIR)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
@@ -31,7 +31,7 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
-	race_bonus = list(STAT_SPEED = 1)
+	statpoint_favor = list(STAT_SPEED = 1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'

@@ -7,7 +7,7 @@
 	is_subrace = TRUE
 	base_name = "Beastvolk"
 	desc = "A race akin to wild-kin, except afflicted with significantly smaller stature. A bit less respected than their kin due to their closer resemblance to vermin, like the dichotomy between Kobold and Zardman.<br>\
-	<span style='color: #6a8cb7;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;'><b>+1 SPD </b></span><br>"
+"
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -40,7 +40,7 @@
 		OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-4), \
 		)
-	race_bonus = list(STAT_SPEED = 1)
+	statpoint_favor = list(STAT_SPEED = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,

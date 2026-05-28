@@ -16,7 +16,7 @@
 	seeing places many could not even dream of. They look down at those they considered the 'settled' \
 	and often uproot themselves quite often in their lifetimes. However, due to the isolation in Azure, many Axians \
 	find their sanity being clawed away as they find themselves stuck in one place.<br>\
-	<span style='color: #6a8cb7;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;'><b>+1 WIL | +1 CON </b></span><br>"
+"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	inherent_traits = list(TRAIT_WATERBREATHING, TRAIT_SEA_DRINKER)
@@ -40,7 +40,7 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
-	race_bonus = list(STAT_WILLPOWER = 1, STAT_CONSTITUTION = 1)
+	statpoint_favor = list(STAT_WILLPOWER = 1, STAT_CONSTITUTION = 1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'

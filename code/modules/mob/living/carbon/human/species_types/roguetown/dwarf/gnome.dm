@@ -14,7 +14,7 @@ The naturally inquisitive mind of a Gnome inclines them towards arcane pursuits,
 Gnomish folk have an earned reputation for being brilliant tradespeople and crafters, although their rapid thoughts often lead to them seeming scatterbrained to the other beings of Azuria.<br>\
 Gnomes are typically a mixed race of Dwarves and a magical race, typically Elves when the two aren't arguing, but some are born with fae blood as well. <br>\
 Even though they are of mixed blood and smaller than typical dwarves, most gnomes and dwarves still regard each other as kin.<br>\
-	<span style='color: #6a8cb7;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;'><b>+1 INT | +1 PER </b></span><br>"
+"
 
 	skin_tone_wording = "Skintone"
 	use_skin_tone_wording_for_examine = FALSE
@@ -50,7 +50,7 @@ Even though they are of mixed blood and smaller than typical dwarves, most gnome
 		OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,-4), OFFSET_UNDIES_F = list(0,-4), \
 		)
-	race_bonus = list( STAT_INTELLIGENCE = 1, STAT_PERCEPTION = 1,)// STAT_CONSTITUTION = -1, ) //leaving off the negative con for now, if inteligence and perception is too strong together, I can put it back in
+	statpoint_favor = list( STAT_INTELLIGENCE = 1, STAT_PERCEPTION = 1,)// STAT_CONSTITUTION = -1, ) //leaving off the negative con for now, if inteligence and perception is too strong together, I can put it back in
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,

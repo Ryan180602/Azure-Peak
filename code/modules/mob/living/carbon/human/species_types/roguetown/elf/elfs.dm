@@ -19,7 +19,7 @@
 	relationships, which are capable of producing half-elven children. Elves are known for \
 	their intelligence and sharp eyes, but their graceful nature typically leaves their bodies \
 	more frail and fragile than most. In these lands, only a handful of the many Elvish tribes are seen.<br>\
-	<span style='color: #6a8cb7;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;'><b>+1 SPD</b></span><br>"
+"
 
 	skin_tone_wording = "Tribal Identity"
 	max_age = 850
@@ -51,7 +51,7 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
-	race_bonus = list(STAT_SPEED = 1)
+	statpoint_favor = list(STAT_SPEED = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,

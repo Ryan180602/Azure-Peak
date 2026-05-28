@@ -18,7 +18,7 @@
 	people cannot decide between regarding you with either mere distrust or outright disgust. Yet \
 	somehow your wandering feet came to Azure Peak, where half-orcs ply muscle and their hardiness \
 	in the rough underbelly or outer reaches of society.<br>\
-	<span style='color: #6a8cb7;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;'><b>+1 STR</b></span><br>"
+"
 
 	skin_tone_wording = "Clan"
 
@@ -47,7 +47,7 @@
 	OFFSET_FACE_F = list(0,1), OFFSET_BELT_F = list(0,1), OFFSET_BACK_F = list(0,1), \
 	OFFSET_NECK_F = list(0,1), OFFSET_MOUTH_F = list(0,1), OFFSET_PANTS_F = list(0,1), \
 	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
-	race_bonus = list(STAT_STRENGTH = 1)
+	statpoint_favor = list(STAT_STRENGTH = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,

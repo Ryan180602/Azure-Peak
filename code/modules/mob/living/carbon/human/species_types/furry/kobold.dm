@@ -10,7 +10,7 @@
 	base_name = "Zard"
 	desc = "<b>Kobold</b><br>\
 	Short in stature and typically scrawny, these little lizards make up for it in their natural agility. People typically stereotype them as thieves, though...<br>\
-	<span style='color: #6a8cb7;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;'><b>+1 FOR | +1 STAT of choice.</b></span><br>"
+	<span style='color: #6a8cb7;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;'><b>+1 STAT of choice.</b></span><br>"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
@@ -35,7 +35,7 @@
 		OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,-4), OFFSET_UNDIES_F = list(0,-4), \
 		)
-	race_bonus = list(STAT_FORTUNE = 1)
+	statpoint_favor = list(STAT_FORTUNE = 1)
 
 	custom_selection = list(
 		"+1 FOR" = STATKEY_LCK,

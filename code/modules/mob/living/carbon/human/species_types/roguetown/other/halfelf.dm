@@ -18,7 +18,7 @@
 	characteristics can be either more Elvish or more Humen, depending on which of their parents' genes \
 	are more predominant. In terms of cultural identity, a Half-Elf will typically choose to lean more \
 	towards either their Humen or Elvish heritages.<br>\
-	<span style='color: #6a8cb7;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;'><b>+1 CON | +1 PER </b></span><br>" 
+" 
 
 	skin_tone_wording = "Ancestry"
 	max_age = 250
@@ -50,7 +50,7 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
-	race_bonus = list(STAT_PERCEPTION = 1, STAT_CONSTITUTION = 1)
+	statpoint_favor = list(STAT_PERCEPTION = 1, STAT_CONSTITUTION = 1)
 	enflamed_icon = "widefire"
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,

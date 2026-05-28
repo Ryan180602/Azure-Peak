@@ -26,7 +26,7 @@
 	Goblins are also known to have an instinctual form of tribalism, \
 	wherein a large group of Goblins in an area seem to universally act in more primitive ways, \
 	often resulting in mischief - and sometimes violence.<br>\
-	<span style='color: #6a8cb7;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;'><b>+1 SPD</b></span><br>" 
+" 
 	species_traits = list(EYECOLOR,LIPS,STUBBLE)
 	possible_ages = ALL_AGES_LIST
 	use_skintones = TRUE
@@ -69,7 +69,7 @@
 		OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-4), \
 		)
-	race_bonus = list(STAT_SPEED = 1)
+	statpoint_favor = list(STAT_SPEED = 1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
