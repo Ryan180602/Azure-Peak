@@ -17,8 +17,7 @@
 	storyteller_maxcaps = list(/datum/storyteller/noc = 1, /datum/storyteller/dendor = 2)
 	var/list/inherent_traits = list(
 		TRAIT_IGNORESLOWDOWN,
-		TRAIT_IGNOREDAMAGESLOWDOWN,
-		TRAIT_NOPAIN, 
+		TRAIT_NOPAIN,
 		TRAIT_NOPAINSTUN, 
 		TRAIT_CRITICAL_RESISTANCE, 
 		TRAIT_NOFALLDAMAGE1, 
