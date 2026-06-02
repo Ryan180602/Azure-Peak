@@ -580,7 +580,7 @@
 	misscost = 3
 	releasedrain = 1
 	swingdelay = 0
-	clickcd = CLICK_CD_FAST // Same speed as katar — fists are the free unarmed weapon
+	clickcd = CLICK_CD_MELEE
 	rmb_ranged = TRUE
 	candodge = TRUE
 	canparry = TRUE

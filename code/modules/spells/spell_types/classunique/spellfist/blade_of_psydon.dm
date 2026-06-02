@@ -61,6 +61,12 @@
 	SIGNAL_HANDLER
 	summoned_blade = null
 
+/datum/intent/katar/cut/spellfist
+	clickcd = CLICK_CD_FAST
+
+/datum/intent/katar/thrust/spellfist
+	clickcd = CLICK_CD_FAST
+
 /obj/item/melee/touch_attack/rogueweapon/bladeofpsydon
 	name = "\improper arcyne katar"
 	desc = "This blade throbs, translucent and iridiscent, blueish arcyne energies running through its translucent surface..."
@@ -69,7 +75,7 @@
 	icon_state = "katar_bound"
 	charges = 20
 	force = 24
-	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
+	possible_item_intents = list(/datum/intent/katar/cut/spellfist, /datum/intent/katar/thrust/spellfist)
 	gripsprite = FALSE
 	wlength = WLENGTH_SHORT
 	w_class = WEIGHT_CLASS_HUGE

@@ -10,7 +10,7 @@
 	chargetime = 0
 	swingdelay = 0
 	damfactor = 1.3
-	clickcd = CLICK_CD_FAST
+	clickcd = CLICK_CD_MELEE
 	item_d_type = "slash"
 
 /datum/intent/katar/thrust
@@ -23,16 +23,16 @@
 	penfactor = PEN_MEDIUM // This make them good vs other light armor users
 	// So they don't need extra bonus damage on top
 	chargetime = 0
-	clickcd = CLICK_CD_FAST
+	clickcd = CLICK_CD_MELEE
 	item_d_type = "stab"
 
 /datum/intent/axe/chop/arbelos
 	damfactor = 1.3
-	clickcd = CLICK_CD_QUICK //Quicker than a conventional axe, but slower than a katar.
+	clickcd = CLICK_CD_MELEE
 
 /datum/intent/axe/cut/arbelos
 	damfactor = 1.15
-	clickcd = CLICK_CD_FAST //Same speed as a katar, but with reduced penetration and half-damage. Main appeal's the chopper.
+	clickcd = CLICK_CD_QUICK
 
 /datum/intent/katar/thrust/arbelos
 	penfactor = PEN_LIGHT
@@ -376,11 +376,11 @@
 
 /datum/intent/axe/chop/arbelos
 	damfactor = 1.3
-	clickcd = CLICK_CD_QUICK //Quicker than a conventional axe, but slower than a katar.
+	clickcd = CLICK_CD_MELEE
 
 /datum/intent/axe/cut/arbelos
 	damfactor = 1.15
-	clickcd = CLICK_CD_FAST //Same speed as a katar, but with reduced penetration and half-damage. Main appeal's the chopper.
+	clickcd = CLICK_CD_QUICK
 
 /datum/intent/katar/thrust/arbelos
 	penfactor = PEN_LIGHT
@@ -981,13 +981,13 @@
 /datum/intent/claw/lunge/iron
 	damfactor = 1.2
 	swingdelay = 8
-	clickcd = CLICK_CD_MELEE
+	clickcd = CLICK_CD_QUICK
 	penfactor = PEN_HEAVY
 
 /datum/intent/claw/lunge/steel
 	damfactor = 1.2
 	swingdelay = 12
-	clickcd = CLICK_CD_HEAVY
+	clickcd = CLICK_CD_QUICK
 	penfactor = PEN_HEAVY
 
 /datum/intent/claw/lunge/gronn
