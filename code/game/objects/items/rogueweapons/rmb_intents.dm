@@ -188,6 +188,8 @@
 		return
 	if(!user)
 		return
+	if(target == user)
+		return
 	if(user.incapacitated())
 		return
 	if(user.has_status_effect(/datum/status_effect/debuff/feintcd))
