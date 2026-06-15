@@ -749,6 +749,9 @@
 		build_all_button_icons()
 		return FALSE
 
+	if(QDELETED(src))
+		return TRUE
+
 	// Spell succeeded - do invocation and sound effects after cast
 	// Placed after cast() so failed casts don't trigger invocations
 	// Spells that need pre-cast invocation (e.g. teleports) should call spell_feedback() manually in cast()
