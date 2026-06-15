@@ -107,8 +107,11 @@
 			active_recipe = null
 		return
 
+	if(!active_recipe)
+		return
+
 	playsound(src, 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE)
-	
+
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		H.mind.add_sleep_experience(/datum/skill/craft/cooking, H.STAINT * active_recipe.experience_per_step)
