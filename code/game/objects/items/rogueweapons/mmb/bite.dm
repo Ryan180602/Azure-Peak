@@ -295,6 +295,7 @@
 	to_chat(user, span_danger("I bite [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]"))
 	C.next_attack_msg.Cut()
 	log_combat(user, C, "limb chewed [sublimb_grabbed] ")
+	qdel(src)
 
 //this is for carbon mobs being drink only
 /obj/item/grabbing/bite/proc/drinklimb(mob/living/user) //implies limb_grabbed and sublimb are things
@@ -304,6 +305,10 @@
 
 	if(!limb_grabbed.get_bleed_rate())
 		to_chat(user, span_warning("Sigh. It's not bleeding."))
+		return
+
+	var/list/check_health = list("health" = user.health)
+	if(!do_after(user, 2 SECONDS, target = grabbed, extra_checks = CALLBACK(user, TYPE_PROC_REF(/mob, break_do_after_checks), check_health, FALSE)))
 		return
 
 	user.drinksomeblood(grabbed, sublimb_grabbed)
