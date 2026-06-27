@@ -11,11 +11,6 @@
 	crate_type = /obj/structure/closet/crate/chest/merchant
 
 // Steel Armor Section. Massive selection here so I am not going to include everything
-/datum/supply_pack/rogue/armor_steel/lightchainmail_steel
-	name = "Haubyrine"
-	cost = 50 // 1 Ingots
-	contains = list(/obj/item/clothing/suit/roguetown/armor/chainmail/light)
-
 /datum/supply_pack/rogue/armor_steel/haubergeon_steel
 	name = "Haubergeon"
 	cost = 50 // 1 Ingots

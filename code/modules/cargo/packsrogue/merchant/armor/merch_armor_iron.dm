@@ -6,11 +6,6 @@
 	crate_name = "merchant guild's crate"
 	crate_type = /obj/structure/closet/crate/chest/merchant
 
-/datum/supply_pack/rogue/armor_iron/lightchainmail_iron
-	name = "Haubyrine"
-	cost = 25
-	contains = list(/obj/item/clothing/suit/roguetown/armor/chainmail/light/iron)
-
 /datum/supply_pack/rogue/armor_iron/chainmail_iron
 	name = "Haubergeon"
 	cost = 25

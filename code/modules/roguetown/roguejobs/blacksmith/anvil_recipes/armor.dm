@@ -459,12 +459,6 @@
 	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/bronze
 	display_category = ITEM_CAT_ARMOR_CHESTPIECES
 
-/datum/anvil_recipe/armor/bronze/lightchainmail
-	name = "Haubyrine, Bronze"
-	req_bar = /obj/item/ingot/bronze
-	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/light/bronze
-	display_category = ITEM_CAT_ARMOR_CHESTPIECES
-
 /datum/anvil_recipe/armor/bronze/maillebracers
 	name = "Chainsleeves, Bronze"
 	req_bar = /obj/item/ingot/bronze
@@ -510,12 +504,6 @@
 	display_category = ITEM_CAT_SMITHING_MISC
 
 // IRON
-/datum/anvil_recipe/armor/iron/lightchainmail
-	name = "Haubyrine, Iron"
-	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/light/iron
-	display_category = ITEM_CAT_ARMOR_CHESTPIECES
-
 /datum/anvil_recipe/armor/iron/haubergeon
 	name = "Haubergeon, Iron"
 	req_bar = /obj/item/ingot/iron
@@ -824,12 +812,6 @@
 	display_category = ITEM_CAT_SMITHING_MISC
 
 // --------- STEEL RECIPES -----------
-/datum/anvil_recipe/armor/steel/lightchainmail
-	name = "Haubyrine, Steel"
-	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/light
-	display_category = ITEM_CAT_ARMOR_CHESTPIECES
-
 /datum/anvil_recipe/armor/steel/haubergeon
 	name = "Haubergeon, Steel"
 	req_bar = /obj/item/ingot/steel
