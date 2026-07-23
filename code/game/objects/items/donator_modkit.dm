@@ -187,6 +187,12 @@
 	result_item = null
 	exact_type = TRUE
 
+/obj/item/enchantingkit/gothicpsydoniccuirass
+	name = "'Gothic Psydonic Cuirass' morphing elixir"
+	desc = "A small container of special morphing dust, perfect to make a specific item. It can be used to make a Psydonic Cuirass appear like a Gothic Fluted Cuirass, instead of the more ornate design present in the 'Gothic Steel Armor' morphing elixir."
+	target_items = list(/obj/item/clothing/suit/roguetown/armor/plate/cuirass/fluted/ornate)
+	result_item = /obj/item/clothing/suit/roguetown/armor/plate/cuirass/fluted/ornate/donator_gothic
+
 /obj/item/enchantingkit/croppedhaubergeon
 	name = "'Cropped Haubergeon' morphing elixir"
 	desc = "A small container of special morphing dust, perfect to make a specific item. It can be used to alter the appearance of a Bronze Haubergeon, an Iron Haubergeon, or a Steel Haubergeon."

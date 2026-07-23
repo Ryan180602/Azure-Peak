@@ -764,11 +764,11 @@
 
 /obj/item/rogueweapon/sword/long/psysword/triumph_slim
 	icon_state = "slimpsysword"
-	icon = 'icons/obj/items/donor_weapons.dmi'
+	icon = 'icons/obj/items/donor_weapons_64.dmi'
 
 /obj/item/rogueweapon/sword/long/oldpsysword/triumph_slim
 	icon_state = "slimopsysword"
-	icon = 'icons/obj/items/donor_weapons.dmi'
+	icon = 'icons/obj/items/donor_weapons_64.dmi'
 
 /obj/item/rogueweapon/stoneaxe/woodcut/triumph_doublehead
 	name = "double-headed axe"
