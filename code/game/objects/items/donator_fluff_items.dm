@@ -385,8 +385,8 @@
 	icon_state = "plackartleather"
 
 /obj/item/clothing/suit/roguetown/armor/plate/cuirass/bronze/donator_girdle
-	name = "bronzeplackart"
-	desc = "A curious - and particularly revealing - variant of an bronzecuirass. It's said that the intentionally provocative design \
+	name = "bronze plackart"
+	desc = "A curious - and particularly revealing - variant of a bronze cuirass. It's said that the intentionally provocative design \
 	excels at diverting strikes that'd otherwise pierce the wearer's unprotected regions."
 	icon = 'icons/clothing/donor_clothes.dmi'
 	mob_overlay_icon = 'icons/clothing/onmob/donor_clothes.dmi'
@@ -638,6 +638,39 @@
 	desc = "A magnificent plume, intended to be worn atop a helmet; a touch of flamboyance, indiscriminate of the alloy."
 	item_state = "greatplume" //Won't look perfect on some helmets (due to the lack of direction-specific clipping), but it'll do.
 	icon_state = "greatplume"
+	slot_flags = ITEM_SLOT_HEAD //Not designed to be worn outside of a helmet's cosmetic inventory. Going to see how this goes.
+	worn_offsets = list("x" = 0, "y" = 2)
+	color = null
+
+/obj/item/clothing/head/roguetown/decoration/featherplume
+	name = "helmet's featherplume"
+	desc = "A resplendant plume, intended to be worn atop a helmet; a touch of flamboyance, indiscriminate of the alloy."
+	item_state = "pplume"
+	icon_state = "pplume"
+	slot_flags = ITEM_SLOT_HEAD
+	worn_offsets = list("x" = 0, "y" = 2)
+	color = null
+	detail_tag = "_detail"
+	detail_color = CLOTHING_WHITE
+
+/obj/item/clothing/head/roguetown/decoration/featherplume/Initialize()
+	. = ..()
+	update_icon()
+
+/obj/item/clothing/head/roguetown/decoration/featherplume/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+/obj/item/clothing/head/roguetown/decoration/crestplume
+	name = "helmet's crestplume"
+	desc = "An excellent plume, intended to be worn atop a helmet; a touch of flamboyance, indiscriminate of the alloy."
+	item_state = "cplume" //Won't look perfect on some helmets (due to the lack of direction-specific clipping), but it'll do.
+	icon_state = "cplume"
 	slot_flags = ITEM_SLOT_HEAD //Not designed to be worn outside of a helmet's cosmetic inventory. Going to see how this goes.
 	worn_offsets = list("x" = 0, "y" = 2)
 	color = null
