@@ -677,7 +677,7 @@
 	icon = 'icons/clothing/donor_clothes.dmi'
 	mob_overlay_icon = 'icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_HEAD
-	worn_offsets = list("x" = 0, "y" = 2)
+	worn_offsets = list("x" = 0, "y" = 5)
 	color = null
 	detail_tag = "_detail"
 	detail_color = CLOTHING_WHITE
@@ -703,7 +703,7 @@
 	icon = 'icons/clothing/donor_clothes.dmi'
 	mob_overlay_icon = 'icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_HEAD //Not designed to be worn outside of a helmet's cosmetic inventory. Going to see how this goes.
-	worn_offsets = list("x" = 0, "y" = 2)
+	worn_offsets = list("x" = 0, "y" = 7)
 	color = null
 
 /obj/item/clothing/cloak/tabard/stabard/donator_shoulderguard
