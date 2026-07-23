@@ -142,6 +142,14 @@
 	name = "Gift - Helmet Cosmetic, Greatplume"
 	path = /obj/item/clothing/head/roguetown/decoration/greatplume
 
+/datum/loadout_item/donator/universal/headpiece_featherplume
+	name = "Gift - Helmet Cosmetic, Featherplume"
+	path = /obj/item/clothing/head/roguetown/decoration/featherplume
+
+/datum/loadout_item/donator/universal/headpiece_crestplume
+	name = "Gift - Helmet Cosmetic, Crestplume"
+	path = /obj/item/clothing/head/roguetown/decoration/crestplume
+
 /datum/loadout_item/donator/universal/armorpiece_shoulderguard
 	name = "Gift - Armor Cosmetic, Shoulderguard"
 	path = /obj/item/clothing/cloak/tabard/stabard/donator_shoulderguard

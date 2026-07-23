@@ -444,6 +444,33 @@
 	req_table = TRUE
 	bypass_dupe_test = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/plate/cuirass/fencer/donator_gothic
+	name = "gothic lightweight cuirass"
+	desc = "A magnificent steel cuirass, assembled by an Azurian mastersmith. The intricate fluting and interlocked plates are clear \
+	signs of its Grenzelhoftian heritage; expensive, but second-to-none when it comes to what truly matters in life."
+	icon = 'icons/clothing/donor_clothes.dmi'
+	mob_overlay_icon = 'icons/clothing/onmob/donor_clothes.dmi'
+	item_state = "gcuirass"
+	icon_state = "gcuirass"
+
+/obj/item/clothing/suit/roguetown/armor/plate/cuirass/fluted/donator_gothic
+	name = "gothic fluted cuirass"
+	desc = "A magnificent fluted cuirass, assembled by an Azurian mastersmith. The intricate fluting and interlocked plates are clear \
+	signs of its Grenzelhoftian heritage; expensive, but second-to-none when it comes to what truly matters in life."
+	icon = 'icons/clothing/donor_clothes.dmi'
+	mob_overlay_icon = 'icons/clothing/onmob/donor_clothes.dmi'
+	item_state = "gflutedcuirass"
+	icon_state = "gflutedcuirass"
+
+/obj/item/clothing/suit/roguetown/armor/plate/cuirass/fluted/ornate/donator_gothic
+	name = "gothic psydonic cuirass"
+	desc = "A magnificent ornate cuirass, assembled by an Azurian mastersmith. The intricate fluting and interlocked plates are clear \
+	signs of its Grenzelhoftian heritage; expensive, but second-to-none when it comes to what truly matters in life."
+	icon = 'icons/clothing/donor_clothes.dmi'
+	mob_overlay_icon = 'icons/clothing/onmob/donor_clothes.dmi'
+	item_state = "gpsycuirass"
+	icon_state = "gpsycuirass"
+
 /obj/item/clothing/suit/roguetown/armor/plate/cuirass/iron/donator_gothic
 	name = "gothic iron cuirass"
 	desc = "A magnificent iron cuirass, assembled by an Azurian mastersmith. The intricate fluting and interlocked plates are clear \
@@ -647,6 +674,8 @@
 	desc = "A resplendant plume, intended to be worn atop a helmet; a touch of flamboyance, indiscriminate of the alloy."
 	item_state = "pplume"
 	icon_state = "pplume"
+	icon = 'icons/clothing/donor_clothes.dmi'
+	mob_overlay_icon = 'icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_HEAD
 	worn_offsets = list("x" = 0, "y" = 2)
 	color = null
@@ -671,6 +700,8 @@
 	desc = "An excellent plume, intended to be worn atop a helmet; a touch of flamboyance, indiscriminate of the alloy."
 	item_state = "cplume" //Won't look perfect on some helmets (due to the lack of direction-specific clipping), but it'll do.
 	icon_state = "cplume"
+	icon = 'icons/clothing/donor_clothes.dmi'
+	mob_overlay_icon = 'icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_HEAD //Not designed to be worn outside of a helmet's cosmetic inventory. Going to see how this goes.
 	worn_offsets = list("x" = 0, "y" = 2)
 	color = null
@@ -1048,6 +1079,13 @@
 	name = "elegant executioner's sword"
 	desc = "An elegant executioner's sword for an elegant headsman."
 	icon_state = "donatorexesword"
+	icon = 'icons/obj/items/donor_weapons_64.dmi'
+	bigboy = TRUE
+
+/obj/item/rogueweapon/flail/peasantwarflail/iron/donator_elegant
+	name = "elegant greatflail"
+	desc = "An elegant greatflail for an elegant wielder."
+	icon_state = "donatorgreatflail"
 	icon = 'icons/obj/items/donor_weapons_64.dmi'
 	bigboy = TRUE
 
