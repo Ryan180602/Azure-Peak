@@ -196,7 +196,7 @@
 	</br>Heaven's gate closed to us long ago, yet His children persist; as as long as they do, so must I. \
 	</br>Happiness must be fought for."
 	armor = ARMOR_PADDED
-	max_integrity = 400
+	max_integrity = ARMOR_INT_CHEST_LIGHT_MASTER
 	repair_time = 20 SECONDS
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple/monke
@@ -207,7 +207,7 @@
 	</br>I came here because I wanted purpose, something solid to believe in.\
 	</br>They tell me doubt is natural, and that understanding comes with time.\
 	</br>For now, I will listen, learn, and try to live in a way that does not waste what was given to us."
-	max_integrity = 225
+	max_integrity = ARMOR_INT_CHEST_LIGHT_MEDIUM
 	repair_time = 25 SECONDS
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/iconoclast
@@ -219,13 +219,13 @@
 	Oh no, not me, I never lost control.</br> \
 	You're face to face, with the man who sold the world."
 	armor = ARMOR_DRAGONSKIN
-	max_integrity = 450
+	max_integrity = ARMOR_INT_CHEST_LIGHT_MASTER
 	repair_time = 20 SECONDS
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple/barbarian
 	name = "hardened skin"
 	desc = "Toughened from abuse. My mettle remains."
-	max_integrity = 200
+	max_integrity = ARMOR_INT_CHEST_LIGHT_MEDIUM
 	repair_time = 25 SECONDS
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple/berserker
@@ -246,12 +246,12 @@
 	blocking_behavior = SAMEWEAR
 	body_parts_covered = COVERAGE_VEST
 	body_parts_inherent = COVERAGE_VEST
-	max_integrity = 180
+	max_integrity = ARMOR_INT_CHEST_LIGHT_BASE
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple/bailiff
 	name = "scar-marred skin"
 	desc = "Bearing scars of countless whips leaves a gnarly visage. Now it's your time to inflict the same fate upon others."
-	max_integrity = 250
+	max_integrity = ARMOR_INT_CHEST_LIGHT_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/easttats
 	name = "bouhoi bujeog tattoos"
@@ -265,7 +265,7 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	//allowed_race = NON_DWARVEN_RACE_TYPES
-	max_integrity = 350
+	max_integrity = ARMOR_INT_CHEST_LIGHT_MEDIUM
 
 	repairmsg_begin = "The tattoos begin to slowly mend their abuse..."
 	repairmsg_continue = "The tattoos mend some of their abuse..."
@@ -279,16 +279,16 @@
 	name = "seon-mul tattoos"
 	desc = "The flowing clouds of the Ruma are but fleeting shadow across the plains, pale imitation of Xinyi's spiritual alchemy. Imperfect, impotent. Their legend is one writ in avarice and hate.</br></br>Recount yours in love."
 	armor = ARMOR_LEATHER
-	max_integrity = 450
+	max_integrity = ARMOR_INT_CHEST_LIGHT_MASTER
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple/gladiator
 	name = "pit-hardened skin"
 	desc = "Are you not entertained?!"
-	max_integrity = 200
+	max_integrity = ARMOR_INT_CHEST_LIGHT_MEDIUM
 	repair_time = 25 SECONDS
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple/monk
 	name = "tough skin"
 	desc = "Do you forsake protection for enlightenment, or in repentance for past transgressions?"
-	max_integrity = 200
+	max_integrity = ARMOR_INT_CHEST_LIGHT_MEDIUM
 	repair_time = 25 SECONDS
