@@ -453,6 +453,15 @@
 	item_state = "gcuirass"
 	icon_state = "gcuirass"
 
+/obj/item/clothing/suit/roguetown/armor/plate/cuirass/fencer/psydon/donator_gothic
+	name = "gothic lightweight cuirass"
+	desc = "A magnificent steel cuirass, assembled by an Azurian mastersmith. The intricate fluting and interlocked plates are clear \
+	signs of its Grenzelhoftian heritage; expensive, but second-to-none when it comes to what truly matters in life."
+	icon = 'icons/clothing/donor_clothes.dmi'
+	mob_overlay_icon = 'icons/clothing/onmob/donor_clothes.dmi'
+	item_state = "gcuirass"
+	icon_state = "gcuirass"
+
 /obj/item/clothing/suit/roguetown/armor/plate/cuirass/fluted/donator_gothic
 	name = "gothic fluted cuirass"
 	desc = "A magnificent fluted cuirass, assembled by an Azurian mastersmith. The intricate fluting and interlocked plates are clear \
