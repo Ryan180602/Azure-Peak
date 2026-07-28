@@ -35,7 +35,6 @@
 		/datum/virtue/utility/notable, //No resident (????) or free-money-stash hags
 		/datum/virtue/utility/bronzelimbs, //They should feel pain in their limbs given their state
 		/datum/virtue/movement/acrobatic, //This should be given to them when they are actually after a Hunted
-		/datum/virtue/utility/woodwalker, //This should be given to them when they are actually after a Hunted
 		/datum/virtue/combat/crossbowman,	//Absolutely not on a class like this
 		/datum/virtue/combat/bowman, // I'd rather not see combat Hags
 		/datum/virtue/utility/feytouched, // They are already FAE

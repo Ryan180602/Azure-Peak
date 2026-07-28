@@ -370,10 +370,11 @@
 		var/obj/item/bodypart/new_limb = new to_attach()
 		new_limb.attach_limb(recipient)
 
+// Type path kept as-is so savefiles that still hold the old Woodwalker virtue load into this one instead of falling back to None.
 /datum/virtue/utility/woodwalker
-	name = "Woodwalker"
-	desc = "After years of training in the wilds, I've learned to traverse the woods confidently, without breaking any twigs. I can even step lightly on leaves without falling."
-	added_traits = list(TRAIT_WOODWALKER, TRAIT_OUTDOORSMAN)
+	name = "Outdoorsman"
+	desc = "Years spent living rough have taught me to make a bed of the wilds. I can sleep on a treebranch as soundly as I would in a bedroll."
+	added_traits = list(TRAIT_OUTDOORSMAN)
 
 /datum/virtue/heretic/zchurch_keyholder
 	name = "Defiled Keyholder"
