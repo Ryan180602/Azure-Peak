@@ -16,15 +16,13 @@
 		STATKEY_PER = 2
 	)
 	subclass_mage_aspects = list("mastery" = FALSE, "major" = 1, "minor" = 2, "utilities" = 9, "ward" = TRUE)
-	extra_context = "This subclass chooses between twin shamshirs or a more traditional staff."
+	extra_context = "This subclass wields a greater staff."
 	subclass_skills = list(
 		/datum/skill/combat/wrestling = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/swimming = SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/climbing = SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/swords = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/staves = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/arcyne = SKILL_LEVEL_EXPERT,
 		/datum/skill/craft/crafting = SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/medicine = SKILL_LEVEL_NOVICE,
@@ -33,6 +31,7 @@
 		/datum/skill/craft/alchemy = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/riding = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/craft/sewing = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/staves = SKILL_LEVEL_EXPERT
 	)
 
 /datum/outfit/job/roguetown/mercenary/desert_rider_sahir/pre_equip(mob/living/carbon/human/H)
@@ -42,6 +41,7 @@
 	head = /obj/item/clothing/head/roguetown/roguehood/shalal/hijab/raneshen
 	neck = /obj/item/clothing/neck/roguetown/gorget/copper
 	mask = /obj/item/clothing/mask/rogue/facemask/copper
+	r_hand = /obj/item/rogueweapon/woodstaff/implement/greater
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/raneshen
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/raneshen
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/copper
@@ -60,18 +60,5 @@
 		/obj/item/flashlight/flare/torch,
 		/obj/item/storage/belt/rogue/pouch/coins/poor
 		)
-
-	if(H.mind)
-		var/weapons = list("Twin Shamshirs", "Greater Staff")
-		var/weapon_choice = input(H, "Choose your weapon.", "TAKE UP ARMS") as anything in weapons
-		H.set_blindness(0)
-		switch(weapon_choice)
-			if("Twin Shamshirs")
-				beltl = /obj/item/rogueweapon/scabbard/sword
-				beltr = /obj/item/rogueweapon/scabbard/sword
-				r_hand = /obj/item/rogueweapon/sword/sabre/shamshir
-				l_hand = /obj/item/rogueweapon/sword/sabre/shamshir
-			if("Greater Staff")
-				r_hand = /obj/item/rogueweapon/woodstaff/implement/greater
 
 	H.merctype = 4
