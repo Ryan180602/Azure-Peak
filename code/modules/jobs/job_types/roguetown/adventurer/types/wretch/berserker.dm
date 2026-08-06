@@ -2,12 +2,12 @@
 	name = "Berserker"
 	tutorial = "You are a warrior feared for your brutality, dedicated to using your might for your own gain. Might equals right, and you are the reminder of such a saying."
 	allowed_sexes = list(MALE, FEMALE)
-	
+
 	outfit = /datum/outfit/job/roguetown/wretch/berserker
 	cmode_music = 'sound/music/cmode/antag/combat_darkstar.ogg'
 	class_select_category = CLASS_CAT_WARRIOR
 	category_tags = list(CTAG_WRETCH)
-	traits_applied = list(TRAIT_STRONGBITE, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_NOPAINSTUN, TRAIT_BLOOD_RESISTANCE, TRAIT_RAGE)
+	traits_applied = list(TRAIT_STRONGBITE, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_NOPAINSTUN, TRAIT_RAGE)
 	extra_context = "This subclass gains access to the RAGE ability."
 	// total of 5 because int gets nuked by 2 similar to barbarian, still better then adv barb for +1
 	subclass_stats = list(
@@ -96,7 +96,7 @@
 						gloves = /obj/item/clothing/gloves/roguetown/knuckles
 					if("Punch Dagger")
 						beltr = /obj/item/rogueweapon/katar/punchdagger
-			if("Martial Expert") // designed to compete with unarmed by giving you alternatives to approaching fights- only expert 
+			if("Martial Expert") // designed to compete with unarmed by giving you alternatives to approaching fights- only expert
 				var/list/martial_options = list("Greatsword", "Battle Axe", "Grand Mace", "Longsword")
 				var/weapon_choice = input(H, "Choose your WEAPONS of WAR!", "SPILL THEIR ENTRAILS.") as anything in martial_options
 				switch(weapon_choice)
