@@ -2,6 +2,7 @@
 	name = "clandestine tube"
 	desc = "A crude pneumatic tube. It seems to connect somewhere nearby."
 	obfuscated = TRUE
+	allow_ghosts = FALSE
 	var/next_send_time = 0
 	var/notify_bathhouse = FALSE
 	/// This tube's identity for pairing
@@ -50,6 +51,8 @@
 	return TRUE
 
 /obj/structure/roguemachine/mail/paired_hermes/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	if(isobserver(usr))
+		return TRUE
 	if(action == "send_tube")
 		var/mob/user = usr
 		var/content = params["content"]
