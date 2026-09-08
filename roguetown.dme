@@ -1924,7 +1924,6 @@
 #include "code\modules\events\antagonist\solo\vampires.dm"
 #include "code\modules\events\antagonist\solo\vampires_and_werewolves.dm"
 #include "code\modules\events\antagonist\solo\werewolf.dm"
-#include "code\modules\events\antagonist\solo\werewolflite.dm"
 #include "code\modules\events\antagonist\solo\minor\aspirant.dm"
 #include "code\modules\events\god_intervention\abyssor.dm"
 #include "code\modules\events\god_intervention\astrata.dm"
