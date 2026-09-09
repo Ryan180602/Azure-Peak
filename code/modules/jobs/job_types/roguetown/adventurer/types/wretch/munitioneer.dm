@@ -70,7 +70,6 @@
 		/obj/item/rogueweapon/huntingknife/combat = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
 		/obj/item/riddleofsteel = 1,
-		/obj/item/storage/belt/rogue/pouch/coins/mid = 1,
 		/obj/item/rogueweapon/chisel/bronze = 1,
 		/obj/item/rogueweapon/handsaw/bronze = 1,
 		/obj/item/rogueweapon/hammer/bronze = 2, //so you can split efforts if you get several in on a fort.
