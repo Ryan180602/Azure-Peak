@@ -286,7 +286,7 @@
 
 /obj/item/roguecoin/silver/pile/munitioneerpile/Initialize(mapload) //for muntineer, exclusely to speed up them aquiring materials w/ out having to benefit town by selling to them or lose the arms race against the guild.
 	. = ..()
-	set_quantity(15) // 75 mammons, to avoid being dead broke when latejoining
+	set_quantity(16) // 80 mammons, to avoid being dead broke when latejoining
 
 /obj/item/roguecoin/gold/pile/Initialize(mapload)
 	. = ..()
