@@ -2339,8 +2339,6 @@ GLOBAL_LIST_INIT(sight_trait_signals, build_sight_trait_signals())
 				var/obj/structure/trap/M = O
 				if(isturf(M.loc) && M.armed)
 					found_ping(get_turf(M), client, "trap")
-			if(istype(O, /obj/structure/flora/roguegrass/maneater/real))
-				found_ping(get_turf(O), client, "trap")
 			if(istype(O, /obj/item/clothing) || istype(O, /obj/item/rogueweapon) || istype(O, /obj/item/gun))	//bows and crossbows are... guns...
 				if(!isturf(O.loc))
 					continue

@@ -67,4 +67,4 @@
 
 /atom/movable/screen/alert/status_effect/buff/sneak_infusion
 	name = "Sneaky Infusion"
-	desc = "Abyssor's dream is vivid in my mind, showing hints of rustling bushes and maneaters."
+	desc = "Abyssor's dream is vivid in my mind, showing hints of rustling bushes and lurking ambushers."

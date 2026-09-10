@@ -337,7 +337,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	set waitfor = FALSE
 	. = ..()
 	var/image/A = null
-	var/kind = force_kind ? force_kind : pick("shadow","monster","ww","skeleton","spider","demon","maneater")
+	var/kind = force_kind ? force_kind : pick("shadow","monster","ww","skeleton","spider","demon")
 	feedback_details += "Type: [kind]"
 	var/list/nearby
 	if(skip_nearby)
@@ -371,10 +371,6 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 				A = image('icons/roguetown/mob/monster/spider.dmi',H,"skallax")
 				A.name = "Ambush spider"
 				target.playsound_local(H, 'sound/vo/mobs/spider/idle (1).ogg', 80, 1)
-			if("maneater")//Maneater
-				A = image('icons/roguetown/mob/monster/maneater.dmi',H,"maneater")
-				A.name = "Maneater"
-				target.playsound_local(H, pick('sound/vo/mobs/plant/attack (1).ogg','sound/vo/mobs/plant/attack (2).ogg','sound/vo/mobs/plant/attack (3).ogg','sound/vo/mobs/plant/attack (4).ogg'), 80, 1)
 			if("demon")//Demon
 				A = image('icons/roguetown/mob/monster/hellkeeper.dmi',H,"hellkeeper")
 				A.name = "RUN"
@@ -403,7 +399,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	set waitfor = FALSE
 	..()
 	var/image/A = null
-	var/kind = force_kind ? force_kind : pick("shadow","monster","ww","skeleton","spider","demon","maneater")
+	var/kind = force_kind ? force_kind : pick("shadow","monster","ww","skeleton","spider","demon")
 	feedback_details += "Type: [kind]"
 	switch(kind)
 		if("shadow")//shadowperson
@@ -463,11 +459,6 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			target.playsound_local(target, pick('sound/misc/carriage3.ogg'), 80, 1)
 			sleep(80)
 			target.playsound_local(target, pick('sound/misc/carriage4.ogg'), 80, 1)*/
-		if("maneater")//maneater
-			A = image('icons/roguetown/mob/monster/maneater.dmi',target,"maneater")
-			target.playsound_local(target, pick('sound/vo/mobs/plant/attack (1).ogg','sound/vo/mobs/plant/attack (2).ogg','sound/vo/mobs/plant/attack (3).ogg','sound/vo/mobs/plant/attack (4).ogg'), 80, 1)
-			/*sleep(290)
-			target.playsound_local(target, pick('sound/vo/mobs/plant/pain (1).ogg','sound/vo/mobs/plant/pain (2).ogg','sound/vo/mobs/plant/pain (3).ogg','sound/vo/mobs/plant/pain (4).ogg'), 80, 1)*/
 		/*if("custom")
 			A = image(custom_icon_file, target, custom_icon)*/
 	A.override = 1

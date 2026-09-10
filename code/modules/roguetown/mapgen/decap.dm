@@ -20,7 +20,6 @@
 	/obj/structure/flora/grass/green = 20,
 	/obj/item/grown/log/tree/stick = 16,
 	/obj/structure/flora/roguegrass/pyroclasticflowers = 3,
-	/obj/structure/flora/roguegrass/maneater/real=3,
 	/obj/structure/flora/roguegrass/herb/random = 5,
 	/obj/structure/leyline/normal/decap = 2,
 	/obj/effect/hunting_track = 3)

@@ -31,7 +31,7 @@
 		<p>On the far left, you will see a big arrow pointing up and down. That is your command for STANDING UP / LAYING DOWN respectively. Laying down / Standing Up can be toggled by <b>V</b> by default.</p>
 
 		<h3>Resist</h3>
-		<p>You can RESIST by pressing <b>X</b> as the shortcut. Resist is useful when you are grappled or most importantly - grabbed by a maneater in the wilds. Knowing it makes the difference between breaking a piece of armor or being torn piece to piece.</p>
+		<p>You can RESIST by pressing <b>X</b> as the shortcut. Resist is useful when you are grappled, restrained, or otherwise held in place. Knowing it makes the difference between breaking free and being torn piece to piece.</p>
 
 		<p>Resist can also be used to pat out flames on you. Patting while laying down will make you roll, stunning you but putting it down rapidly.</p>
 
@@ -51,7 +51,7 @@
 
 		<p>Running into solid objects like a tree will knock you down and running into boulders can trip you.</p>
 
-		<p>You can toggle SNEAK mode by clicking on the SNEAK button. By default, it is not bound. Your ability to sneak depends on your "Sneaking" skills. Higher sneaking skills make you move faster while sneaking. Sneaking renders you completely invisible when you are in the dark. In a lit area it does nothing for you while you are standing, though laying down while sneaking will make you partly transparent. It is broken by being near a light source. It also allows you to avoid maneaters or triggering ambushes in the wild.</p>
+		<p>You can toggle SNEAK mode by clicking on the SNEAK button. By default, it is not bound. Your ability to sneak depends on your "Sneaking" skills. Higher sneaking skills make you move faster while sneaking. Sneaking renders you completely invisible when you are in the dark. In a lit area it does nothing for you while you are standing, though laying down while sneaking will make you partly transparent. It is broken by being near a light source. It also allows you to avoid triggering ambushes in the wild.</p>
 
 		<p>Right clicking on the EYE allows you to look around for hidden objects. By default, this stops your movement, though the Sleuth virtue can allow you to track and move at the same time.</p>
 		</div>

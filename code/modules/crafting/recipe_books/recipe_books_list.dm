@@ -135,7 +135,7 @@
 	. += span_info("Clicking the 'FEINT' button on your HUD allows you to toggle between a variety of intents, which changes your stance in COMBAT MODE. Shift-click each intent to learn more about their unique mechanics.")
 	. += span_info("Below that are the four subintents; 'BITE', 'KICK', 'JUMP', and 'SPECIAL'. These are triggerable by middle-clicking. Toggling 'JUMP' and 'RUN' at the same time lets you LEAP across larger gaps.")
 	. += span_info("Pressing 'C', by default, toggles COMBAT MODE. This allows your character to PARRY and DODGE incoming attacks, while greatly improving their capacity to fight back.")
-	. += span_info("Pressing 'X', by default, allows you to RESIST. This is used for many circumstances; putting out fires on yourself, getting out of beds and chairs, escaping MANEATERS, and so on.")
+	. += span_info("Pressing 'X', by default, allows you to RESIST. This is used for many circumstances; putting out fires on yourself, getting out of beds and chairs, breaking free of restraints, and so on.")
 	. += span_info("Pressing 'V', by default, lets you GET UP and LAY DOWN. This can be used to recover energy and stamina, represented by the blue and green bars on your HUD. Pace yourself, lest you be caught off-guard.")
 	. += span_info("This tome can be turned into the Stockpile, traditionally located in a small alcove between the Innhouse and Smithy, for some coinage.")
 	. += span_info("If you're ever stumped, try asking a question through the 'Mentorhelp' verb in the 'Admin' tab, located in your screen's top-right corner. Alternatively, try asking in the Discord's #mentor-talk channel.")
