@@ -189,7 +189,7 @@
 				if(HAS_TRAIT(src, TRAIT_SILVER_BLESSED))
 					to_chat(user, span_warning("BLEH! [bite_victim] tastes of SILVER! My gift cannot take hold."))
 				else
-					if(user.mind.has_antag_datum(/datum/antagonist/werewolf/noinfect))
+					if(user.mind.has_antag_datum(/datum/antagonist/werewolf/noinfect)) //they can't infect anyone
 						to_chat(user, span_warning("My curse is not strong enough to infect [bite_victim]."))
 						if(prob(50))
 							user.werewolf_feed(bite_victim, 10)
