@@ -15906,12 +15906,10 @@
 /area/rogue/indoors/town)
 "cZB" = (
 /obj/structure/fluff/railing/border/west,
-/obj/structure/roguemachine/scomm{
+/obj/structure/roguemachine/scomm/receive_only{
 	scom_tag = "Wardens' Outpost"
 	},
-/turf/open/floor/rogue/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
 "cZE" = (
 /obj/structure/bars/pipe{
@@ -110246,14 +110244,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
-"uuk" = (
-/obj/structure/roguemachine/scomm/r{
-	scom_tag = "Outpost Watchtower - Ground Floor"
-	},
-/turf/open/floor/rogue/metal{
-	dir = 4
-	},
-/area/rogue/indoors/shelter/woods)
 "uul" = (
 /obj/structure/mineral_door/wood/violet,
 /turf/open/floor/rogue/concrete,
@@ -320432,7 +320422,7 @@ dpy
 nTq
 iaB
 fiq
-uuk
+bWg
 lGG
 jaH
 jaH
