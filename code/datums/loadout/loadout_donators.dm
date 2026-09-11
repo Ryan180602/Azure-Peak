@@ -1142,6 +1142,11 @@
 	path = /obj/item/enchantingkit/donator_koruu_ravoxclerichelm
 	ckeywhitelist = list("koruu", "oddbomber3768", "nooriginality", "vakiova", "maesune")
 
+/datum/loadout_item/donator/bloom_coat
+	name = "Donator Item - Royal Coat"
+	path = /obj/item/clothing/suit/roguetown/shirt/tunic/rosacoat/three
+	ckeywhitelist = list("bloom77")
+
 /datum/loadout_item/donator/koruu_cadwyncloak_astrata
 	name = "Donator Item - Cloak of the Order of the Sun"
 	path = /obj/item/clothing/cloak/templar/astratancleric/koruu
