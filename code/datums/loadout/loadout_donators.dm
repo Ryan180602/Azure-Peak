@@ -1151,3 +1151,9 @@
 	name = "Donator Item - Lux In Tenebris"
 	path = /obj/item/enchantingkit/donator_koruu_astrataclerichelm
 	ckeywhitelist = list("koruu", "oddbomber3768", "nooriginality", "vakiova", "maesune")
+
+/datum/loadout_item/donator/lief_friend
+	name = "Donator Item - Aurum's Amulets"
+	path = /obj/item/clothing/neck/roguetown/psicross/liefdonator
+	ckeywhitelist = list("linxsysart", "Pessime959")
+
