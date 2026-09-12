@@ -139,7 +139,7 @@ GLOBAL_LIST_INIT(cmode_tracks_by_type, build_cmode_tracks())
 	name = "Bandit Mage (Hedge Mage)"
 	desc = "I probably wouldn't shove a lucid memory of my mynd being torn apart in a stranger's face, if I didn't want to get skullcracked."
 	shortname = "Bandit Mage"
-	credits = "corru.works - Timestopper Tactics(https://corruworks.bandcamp.com)"
+	credits = "corru.works - Timestopper Tactics (https://corruworks.bandcamp.com)"
 	musicpath = list('sound/music/cmode/antag/combat_timestopper.ogg')
 
 /datum/combat_music/barbarian
@@ -280,7 +280,7 @@ GLOBAL_LIST_INIT(cmode_tracks_by_type, build_cmode_tracks())
 	name = "Heretic - Psydon"
 	desc = "THERE IS A TUMOR DIRECTLY BEHIND MY LEFT EYEBALL."
 	shortname = "Psy-Heretic"
-	credits = "corru.works - BSTRD(https://corruworks.bandcamp.com)"
+	credits = "corru.works - BSTRD (https://corruworks.bandcamp.com)"
 	musicpath = list('sound/music/cmode/antag/combat_adonai.ogg')
 
 /datum/combat_music/heretic_baotha
