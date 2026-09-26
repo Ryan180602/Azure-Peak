@@ -4557,15 +4557,18 @@ As Excaliber."
 		add_overlay(pic)
 
 /obj/item/rogueweapon/spear/lance/donator_naman
-	name = "noble lance"
-	desc = "'I've got nothing against Heaven, but I'm right here if you want someone to thank.'"
+	name = "Abendrot"
+	desc = "A beautiful lance,  originally gifted to its wielder - alongside a matching sabre - upon their ascendance into knighthood. Beneath \
+	the polished spearhead is a crimson clamp, hued like the dusken skies; and along it, an engraving of silvered elvish runes.. <br>'Abendrot, \
+	the Crimson Sunset.'"
 	icon_state = "naman_lance"
 	icon = 'icons/obj/items/donor_weapons_64.dmi'
 
 /obj/item/rogueweapon/sword/sabre/donator_naman
-	name = "noble sabre"
-	desc = "'One miracle after another has made this possible. Now it's time for one more!'"
-	icon_state = "naman_sabre"
+	name = "Sieglinde"
+	desc = "A beautiful sabre, originally gifted to its wielder - alongside a matching lance - upon their ascendance into knighthood. It, too, has \
+	been designed to better excel at unmounted combat; namely, with a golden knuckleguard that fully defends one's hand. Along the blade's root \
+	is an engraving of silvered elvish runes.. </br>'Sieglinde, the Thunderblade.'"
 	sheathe_icon = "naman_sabre"
 	icon = 'icons/obj/items/donor_weapons.dmi'
 

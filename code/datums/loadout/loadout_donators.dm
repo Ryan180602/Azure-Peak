@@ -294,6 +294,10 @@
 	name = "Gift - Kit, Skikuldic Goggles"
 	path = /obj/item/clothing/mask/rogue/spectacles/iron/drow
 
+/datum/loadout_item/donator/universal/celestialstaff
+	name = "Donator Kit - Celestial Staff"
+	path = /obj/item/enchantingkit/rhynnrhynn_staff
+
 // --- GRENZEL REGIONAL ---
 
 /datum/loadout_item/donator/universal/regional/grenzelhat
@@ -986,11 +990,6 @@
 	path = /obj/item/clothing/head/roguetown/decoration/broche
 	ckeywhitelist = list("rhynnrhynn")
 
-/datum/loadout_item/donator/rhynnrhynn_staff
-	name = "Donator Kit - Celestial Staff"
-	path = /obj/item/enchantingkit/rhynnrhynn_staff
-	ckeywhitelist = list("rhynnrhynn")
-
 /datum/loadout_item/donator/rhynnrhynn_staff_glow
 	name = "Donator Kit - Celestial Staff, Glowing"
 	path = /obj/item/enchantingkit/rhynnrhynn_staff_glow
@@ -1210,7 +1209,7 @@
 /datum/loadout_item/donator/naman_scarfedridercloak
 	name = "Donator Item - Rider's Scarfed Cloak"
 	path = /obj/item/clothing/cloak/half/rider/donator_naman
-	ckeywhitelist = list("copperwilson","nooriginality","maesune")
+	ckeywhitelist = list("copperwilson","nooriginality","maesune","koruu","ghostinthetoaster")
 
 /datum/loadout_item/donator/sanshoom_prowlerrobe
 	name = "Donator Kit - Prowler Robe"
