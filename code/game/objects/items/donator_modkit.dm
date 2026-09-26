@@ -499,6 +499,7 @@
 		/obj/item/clothing/wrists/roguetown/bracers						= /obj/item/clothing/wrists/roguetown/bracers/armharness
 	)
 	result_item = null
+	custom_name = TRUE
 
 /obj/item/enchantingkit/donator_jacketed_gambeson_short
 	name = "'Short Jacketed Gambeson' morphing elixr"
@@ -527,12 +528,14 @@
 	desc = "A small container of special morphing dust, perfect to make a specific item. It can be used to alter the appearance of a pair of Steel Bracers."
 	target_items = list(/obj/item/clothing/wrists/roguetown/bracers)
 	result_item = /obj/item/clothing/wrists/roguetown/bracers/donator_decapauldron
+	custom_name = TRUE
 
 /obj/item/enchantingkit/donator_universal_steelpauldron
 	name = "'Steel Pauldrons' morphing elixir"
 	desc = "A small container of special morphing dust, perfect to make a specific item. It can be used to alter the appearance of a pair of Steel Bracers."
 	target_items = list(/obj/item/clothing/wrists/roguetown/bracers)
 	result_item = /obj/item/clothing/wrists/roguetown/bracers/donator_steelpauldron
+	custom_name = TRUE
 
 /obj/item/enchantingkit/donator_case
 	name = "'Cased Satchel' morphing elixir"
