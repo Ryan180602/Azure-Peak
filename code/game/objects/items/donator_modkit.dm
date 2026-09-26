@@ -181,6 +181,7 @@
 		/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk					= /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/donator
 	)
 	result_item = null
+	custom_name = TRUE
 
 /obj/item/enchantingkit/beltedbackpack
 	name = "'Belted Backpack' morphing elixir"
@@ -188,6 +189,7 @@
 	that this will dissolve any items stored inside the chosen Backpack; make sure to empty it out, beforehand!"
 	target_items = list(/obj/item/storage/backpack/rogue/backpack)
 	result_item = /obj/item/storage/backpack/rogue/backpack/donator_beltpack
+	custom_name = TRUE
 
 /obj/item/enchantingkit/gothicironarmor
 	name = "'Gothic Iron Armor' morphing elixir"
@@ -200,6 +202,7 @@
 	)
 	result_item = null
 	exact_type = TRUE
+	custom_name = TRUE
 
 /obj/item/enchantingkit/gothicsteelarmor
 	name = "'Gothic Steel Armor' morphing elixir"
@@ -221,6 +224,7 @@
 	)
 	result_item = null
 	exact_type = TRUE
+	custom_name = TRUE
 
 /obj/item/enchantingkit/gothicburgeonet
 	name = "'Gothic Burgeonet' morphing elixir"
@@ -232,6 +236,7 @@
 	)
 	result_item = null
 	exact_type = TRUE
+	custom_name = TRUE
 
 /obj/item/enchantingkit/gothicpsydoniccuirass
 	name = "'Gothic Psydonic Cuirass' morphing elixir"
@@ -239,6 +244,7 @@
 	the 'Gothic Steel Armor' morphing elixir."
 	target_items = list(/obj/item/clothing/suit/roguetown/armor/plate/cuirass/fluted/ornate)
 	result_item = /obj/item/clothing/suit/roguetown/armor/plate/cuirass/fluted/ornate/donator_gothic
+	custom_name = TRUE
 
 /obj/item/enchantingkit/croppedhaubergeon
 	name = "'Cropped Haubergeon' morphing elixir"
@@ -250,6 +256,7 @@
 	)
 	result_item = null
 	exact_type = TRUE
+	custom_name = TRUE
 
 /obj/item/enchantingkit/heartplate
 	name = "'Heartplate' morphing elixir"
@@ -286,6 +293,7 @@
 		/obj/item/clothing/suit/roguetown/armor/leather						= /obj/item/clothing/suit/roguetown/armor/leather/donator_cuirass
 	)
 	result_item = null
+	custom_name = TRUE
 
 /obj/item/enchantingkit/cackledagger
 	name = "'Cackledagger' morphing elixir"
@@ -302,6 +310,7 @@
 	that this will dissolve any items stored inside the chosen Belt; make sure to empty it out, beforehand!"
 	target_items = list(/obj/item/storage/belt/rogue/leather)
 	result_item = /obj/item/storage/belt/rogue/leather/donator
+	custom_name = TRUE
 
 /obj/item/enchantingkit/beltfur
 	name = "'Belt of Caped Fur' morphing elixir"
@@ -309,6 +318,7 @@
 	that this will dissolve any items stored inside the chosen Belt; make sure to empty it out, beforehand!"
 	target_items = list(/obj/item/storage/belt/rogue/leather)
 	result_item = /obj/item/storage/belt/rogue/leather/donator_fur
+	custom_name = TRUE
 
 /obj/item/enchantingkit/beltbronzemaille
 	name = "'Belt of Bronze Maille' morphing elixir"
@@ -316,6 +326,7 @@
 	that this will dissolve any items stored inside the chosen Belt; make sure to empty it out, beforehand!"
 	target_items = list(/obj/item/storage/belt/rogue/leather)
 	result_item = /obj/item/storage/belt/rogue/leather/donator_bronze
+	custom_name = TRUE
 
 /obj/item/enchantingkit/beltironmaille
 	name = "'Belt of Iron Maille' morphing elixir"
@@ -323,6 +334,7 @@
 	that this will dissolve any items stored inside the chosen Belt; make sure to empty it out, beforehand!"
 	target_items = list(/obj/item/storage/belt/rogue/leather)
 	result_item = /obj/item/storage/belt/rogue/leather/donator_iron
+	custom_name = TRUE
 
 /obj/item/enchantingkit/beltsteelmaille
 	name = "'Belt of Maille' morphing elixir"
@@ -330,6 +342,7 @@
 	that this will dissolve any items stored inside the chosen Belt; make sure to empty it out, beforehand!"
 	target_items = list(/obj/item/storage/belt/rogue/leather)
 	result_item = /obj/item/storage/belt/rogue/leather/donator_steel
+	custom_name = TRUE
 
 /obj/item/enchantingkit/triheartfelt
 	name = "'Azurian Plate Armor' morphing elixir"
@@ -342,6 +355,7 @@
 	)
 	result_item = null
 	exact_type = TRUE
+	custom_name = TRUE
 
 /obj/item/enchantingkit/weapon/donator_longsword
 	name = "'Elegant Longsword' morphing elixir"
@@ -367,6 +381,7 @@
 		/obj/item/clothing/mask/rogue/facemask						= /obj/item/clothing/mask/rogue/facemask/donator
 	)
 	result_item = null
+	custom_name = TRUE
 
 /obj/item/enchantingkit/plackart
 	name = "'Plackart' morphing elixir"
@@ -494,6 +509,7 @@
 		/obj/item/clothing/suit/roguetown/armor/gambeson					= /obj/item/clothing/suit/roguetown/armor/gambeson/donator_arming
 	)
 	result_item = null
+	custom_name = TRUE
 
 /obj/item/enchantingkit/donator_jacketed_gambeson_long
 	name = "'Long Jacketed Gambeson' morphing elixr"
@@ -504,6 +520,7 @@
 		/obj/item/clothing/suit/roguetown/armor/gambeson					= /obj/item/clothing/suit/roguetown/armor/gambeson/donator_jacket
 	)
 	result_item = null
+	custom_name = TRUE
 
 /obj/item/enchantingkit/donator_universal_decapauldron
 	name = "'Decablessed Pauldrons' morphing elixir"
@@ -545,6 +562,7 @@
 		/obj/item/clothing/head/roguetown/helmet/heavy/knight					= /obj/item/clothing/head/roguetown/helmet/heavy/knight/rockhill
 	)
 	result_item = null
+	custom_name = TRUE
 
 /obj/item/enchantingkit/donator_rockhillmaille
 	name = "'Jacketed Plate-And-Maille' morphing elixir"
@@ -555,6 +573,7 @@
 		/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy			= /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/rockhill
 	)
 	result_item = null
+	custom_name = TRUE
 
 /////////////////////////////
 // ! Player / Donor Kits ! //
@@ -960,7 +979,7 @@
 
 // Nerocavalier
 /obj/item/enchantingkit/weapon/nero_lsword
-	name = "Sylvan Longsword morphing elixir"
+	name = "'Sylvan Longsword' morphing elixir"
 	target_items = list(
 		/obj/item/rogueweapon/sword/long,
 		/obj/item/rogueweapon/sword/long/dec,
@@ -969,7 +988,7 @@
 	result_item = /obj/item/rogueweapon/example/nero_sylvanlsword
 
 /obj/item/enchantingkit/weapon/nero_sabre
-	name = "Sylvan Sabre morphing elixir"
+	name = "'Sylvan Sabre' morphing elixir"
 	target_items = list(
 		/obj/item/rogueweapon/sword/sabre,
 		/obj/item/rogueweapon/sword/sabre/elf,
@@ -979,7 +998,7 @@
 	result_item = /obj/item/rogueweapon/example/nero_sylvansabre
 
 /obj/item/enchantingkit/weapon/nero_dagger
-	name = "Sylvan Dagger morphing elixir"
+	name = "'Sylvan Dagger' morphing elixir"
 	target_items = list(
 		/obj/item/rogueweapon/huntingknife/idagger,
 		/obj/item/rogueweapon/huntingknife/idagger/steel,

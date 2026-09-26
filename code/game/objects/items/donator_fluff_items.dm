@@ -1527,6 +1527,7 @@
 	icon_state = "donatorspear"
 	icon = 'icons/obj/items/donor_weapons_64.dmi'
 	bigboy = TRUE
+	color = null
 
 /obj/item/rogueweapon/mace/goden/steel/donator_elegant
 	name = "elegant grand mace"
