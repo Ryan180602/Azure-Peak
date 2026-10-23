@@ -235,7 +235,7 @@
 
 		apply_scorch_stack(target, 3)
 
-	explosion(T, light_impact_range = 1, smoke = (tripcrit > 0), adminlog = FALSE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg', 'sound/misc/explode/bottlebomb (2).ogg'), bomb_owner = thrower)
+	explosion(T, light_impact_range = 1, flame_range = 2, smoke = (tripcrit > 0), adminlog = FALSE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg', 'sound/misc/explode/bottlebomb (2).ogg'), bomb_owner = thrower)
 
 	return TRUE
 
