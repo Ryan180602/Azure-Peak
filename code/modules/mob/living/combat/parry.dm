@@ -293,6 +293,7 @@
 						skill_target -= SKILL_LEVEL_NOVICE
 					if(HAS_TRAIT(attacker, TRAIT_BADTRAINER))
 						skill_target -= SKILL_LEVEL_NOVICE
+					skill_target = squire_train_cap(attacker, src, skill_target)
 					if (can_train_combat_skill(src, defender_skilltype, skill_target))
 						mind.add_sleep_experience(defender_skilltype, max(round(STAINT*exp_multi*defender_factor), 0), FALSE)
 
@@ -304,6 +305,7 @@
 							skill_target -= SKILL_LEVEL_NOVICE
 						if(HAS_TRAIT(src, TRAIT_BADTRAINER))
 							skill_target -= SKILL_LEVEL_NOVICE
+						skill_target = squire_train_cap(src, attacker, skill_target)
 						if (can_train_combat_skill(attacker, attacker_skilltype, skill_target))
 							attacker.mind.add_sleep_experience(attacker_skilltype, max(round(STAINT*exp_multi*attacker_factor), 0), FALSE)
 
@@ -374,6 +376,7 @@
 						skill_target -= SKILL_LEVEL_NOVICE
 					if(HAS_TRAIT(attacker, TRAIT_BADTRAINER))
 						skill_target -= SKILL_LEVEL_NOVICE
+					skill_target = squire_train_cap(attacker, defender, skill_target)
 					if(can_train_combat_skill(defender, /datum/skill/combat/unarmed, skill_target))
 						defender.mind?.add_sleep_experience(/datum/skill/combat/unarmed, max(round(STAINT*exp_multi), 0), FALSE)
 

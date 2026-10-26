@@ -101,6 +101,11 @@
 		return FALSE
 	return TRUE
 
+/proc/squire_train_cap(mob/living/trainer, mob/living/trainee, target)
+	if(trainer.job != "Knight" || trainee.job != "Squire")
+		return target
+	return min(target, trainee.get_knight_lord() == trainer ? SKILL_LEVEL_EXPERT : SKILL_LEVEL_JOURNEYMAN)
+
 /proc/squire_bond_break(mob/living/knight, mob/living/squire)
 	if(knight && !QDELETED(knight))
 		if(squire && !QDELETED(squire))
